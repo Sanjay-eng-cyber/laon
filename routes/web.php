@@ -20,3 +20,6 @@ Route::get('service/gold-loan', function () {
 Route::get('service/business-loan', function () {
     return view('frontend/loans/business-loan');
 });
+Route::get('service/share-loan', function () {
+    return view('frontend/loans/share-loan');
+});
