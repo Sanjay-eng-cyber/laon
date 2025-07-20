@@ -14,6 +14,9 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'web_domain' => env('WEB_DOMAIN', 'http://localhost'),
+    'cms_domain' => env('CMS_DOMAIN', 'http://localhost'),
+    'mail_to_address' => env('MAIL_TO_ADDRESS'),
 
     /*
     |--------------------------------------------------------------------------
