@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('cms.categories.index') }}" class="btn btn-outline-primary mx-auto">
+                                        <a href="#" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('cms.offer.index') }}" class="btn btn-outline-primary mx-auto">
+                                        <a href="#" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -118,7 +118,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('cms.exhibition.index') }}" class="btn btn-outline-primary mx-auto">
+                                        <a href="#" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>

@@ -324,15 +324,15 @@
                       </a>
                   </li>
                   <li class="menu">
-                      <a href="{{ route('cms.categories.index') }}"
-                          aria-expanded="{{ route('cms.categories.index') == request()->url() ? 'true' : 'false' }}"
+                      <a href="{{ route('cms.cities.index') }}"
+                          aria-expanded="{{ route('cms.cities.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                   viewBox="0 0 24 24">
                                   <path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3" />
                               </svg>
-                              <span>Categories</span>
+                              <span>Cities</span>
                           </div>
                       </a>
                   </li>
