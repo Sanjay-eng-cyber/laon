@@ -1,15 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\ServiceController;
 
 Route::domain(config('app.web_domain'))->group(
     function () {
-        Route::get('/', function () {
-            return view('index');
-        });
-        Route::get('loans', function () {
-            return view('frontend/loans/index');
-        })->name('loans');
+        // Route::get('/', function () {
+        //     return view('index');
+        // });
+        Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+        Route::get('services', [ServiceController::class, 'index'])->name('services.index');
+        Route::get('service/{slug}', [ServiceController::class, 'show'])->name('services.show');
+        // Route::get('loans', function () {
+        //     return view('frontend/loans/index');
+        // })->name('loans');
         Route::get('service/personal-loan', function () {
             return view('frontend/loans/personal-loan');
         });

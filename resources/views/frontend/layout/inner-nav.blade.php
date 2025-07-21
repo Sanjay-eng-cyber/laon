@@ -91,7 +91,7 @@
                                   {{-- <li><a href="product-single-sidebar.html">Product page side tab <span
                                               class="badge">New</span></a>
                                   </li> --}}
-                                  <li><a href="{{ route('loans') }}" title="Loans" class="animsition-link">Loans</a>
+                                  <li><a href="{{ route('services.index') }}" title="Loans" class="animsition-link">Loans</a>
                                   </li>
                                   <li><a href="#">Credit Cards</a>
                                   </li>

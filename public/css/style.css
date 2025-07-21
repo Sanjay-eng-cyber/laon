@@ -3048,16 +3048,23 @@ Service-img
 ---------------------------------*/
 .service-img-box {
   transition: box-shadow .5s;
+  /* max-height: 400px;
+  margin-bottom: 80px; */
 }
 
 .service-img-box:hover {
-  -webkit-box-shadow: 0px 4px 26px 3px rgba(213, 221, 234, 1);
-  -moz-box-shadow: 0px 4px 26px 3px rgba(213, 221, 234, 1);
-  box-shadow: 0px 4px 26px 3px rgba(213, 221, 234, 1);
+  -webkit-box-shadow: 0px 4px 26px 3px rgb(37, 40, 45);
+  -moz-box-shadow: 0px 4px 26px 3px rgb(37, 40, 45);
+  box-shadow: 0px 4px 26px 3px rgb(37, 40, 45);
 }
 
 .service-img {
   position: relative;
+}
+
+.service-img>a>img {
+  height: 220px;
+  width: 350px;
 }
 
 .service-content {}

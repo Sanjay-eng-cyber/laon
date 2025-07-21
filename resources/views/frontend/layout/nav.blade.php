@@ -58,7 +58,7 @@
                                                        class="animsition-link">Lenders Single</a></li>
                                            </ul>
                                        </li> --}}
-                                       <li><a href="{{ route('loans') }}" title="Loans"
+                                       <li><a href="{{ route('services.index') }}" title="Loans"
                                                class="animsition-link">Loans</a></li>
                                        <li><a href="#" class="animsition-link">Credit Cards</a>
                                        </li>

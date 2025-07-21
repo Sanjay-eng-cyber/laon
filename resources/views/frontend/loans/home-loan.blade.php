@@ -1,5 +1,5 @@
   @extends('frontend.layout.app')
-  @section('title', 'Home Loan')
+  @section('title', ucWords($service->name))
   @section('content')
       <div class="page-header">
           <div class="container">
@@ -9,7 +9,7 @@
                           <ol class="breadcrumb">
                               <li><a href="#">Home</a></li>
                               <li><a href="#">Services</a></li>
-                              <li class="active">Home Loan</li>
+                              <li class="active">{{ ucWords($service->name) }}</li>
                           </ol>
                       </div>
                   </div>
@@ -17,13 +17,14 @@
                       <div class="bg-white pinside30">
                           <div class="row">
                               <div class="col-xl-5 col-lg-5 col-md-4 col-sm-12 col-12">
-                                  <h1 class="page-title">Home Loan</h1>
+                                  <h1 class="page-title">{{ ucWords($service->name) }}</h1>
                               </div>
                               <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12 col-12">
                                   <div class="row">
                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                           <div class="rate-block">
-                                              <h1 class="rate-number">11.50%</h1>
+                                              <h1 class="rate-number">{{ number_format($service->rate_of_interest, 1) }}%
+                                              </h1>
                                               <small>Rate of Interest</small>
                                           </div>
                                       </div>
@@ -39,7 +40,8 @@
                       <div class="sub-nav" id="sub-nav">
                           <ul class="nav nav-justified">
                               <li class="nav-item"><a href="#section-about" class="page-scroll nav-link">About Loan</a></li>
-                              <li class="nav-item"><a href="#section-financeNeed" class="page-scroll nav-link">Finance what you need</a>
+                              <li class="nav-item"><a href="#section-financeNeed" class="page-scroll nav-link">Finance what
+                                      you need</a>
                               </li>
                               <li class="nav-item"><a href="#section-feature" class="page-scroll nav-link">features &amp;
                                       Benefits</a></li>
@@ -425,15 +427,9 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('ujjain') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('pune') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('dewas') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('indore') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('mumbai') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('gwalior') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('ratlam') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('mandsor') }}</a></strong>
-                                          <strong><a href="{{ route('loans') }}">{{ ucfirst('bhopal') }}</a></strong>
+                                          @foreach ($service->cities as $city)
+                                              <strong><a href="#">{{ ucfirst($city->name) }}</a></strong>
+                                          @endforeach
                                       </div>
                                   </div>
                               </div>

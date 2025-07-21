@@ -107,21 +107,26 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="service-img-box mb30 text-center outline">
-                            <div class="service-img">
-                                <a href="personal-loan.html" class="imghover"><img src="images/blog-img.jpg"
-                                        alt="Borrow - Loan Company Website Template " class="img-fluid"></a>
-                            </div>
-                            <div class="service-content bg-white pinside30">
-                                <h2><a href="personal-loan.html" class="title">Personal Loan</a></h2>
-                                <p>Discover flexible car financing options for new or used cars, and specialty vehicles
-                                    nsequat fringi porta.</p>
-                                <a href="personal-loan.html" class="btn-link">Read more</a>
+                    @forelse ($services as $ser)
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="service-img-box mb30 text-center outline h-100">
+                                <div class="service-img">
+                                    <a href="#" class="imghover"><img
+                                            src="{{ asset('storage/images/services/' . $ser->image) }}" alt="service"
+                                            class="img-fluid"></a>
+                                </div>
+                                <div class="service-content bg-white pinside30">
+                                    <h2><a href="personal-loan.html" class="title">{{ $ser->name }}</a></h2>
+                                    <p>{!! str($ser->short_desc)->limit(120) !!}</p>
+                                    <a href="#" class="btn-link">Read more</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+
+                    @empty
+                        <div>No Services Found</div>
+                    @endforelse
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="service-img-box mb30 text-center outline">
                             <div class="service-img">
                                 <a href="home-loan.html" class="imghover"><img src="images/blog-img-1.jpg"
@@ -134,8 +139,8 @@
                                 <a href="home-loan.html" class="btn-link">Read more</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    </div> --}}
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="service-img-box mb30 text-center outline">
                             <div class="service-img">
                                 <a href="education-loan.html" class="imghover"><img src="images/blog-img-2.jpg"
@@ -148,7 +153,7 @@
                                 <a href="education-loan.html" class="btn-link">Read more</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
