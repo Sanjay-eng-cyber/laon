@@ -30,5 +30,14 @@ Route::domain(config('app.cms_domain'))->group(function () {
         Route::get('/city/delete/{id}', 'App\Http\Controllers\cms\CityController@delete')->name("cms.cities.delete");
         Route::get('/city/edit/{id}', 'App\Http\Controllers\cms\CityController@edit')->name("cms.cities.edit");
         Route::post('/city/update/{id}', 'App\Http\Controllers\cms\CityController@update')->name("cms.cities.update");
+
+          // Services Controller
+        Route::get('/services', 'App\Http\Controllers\cms\ServiceController@index')->name('cms.services.index');
+        Route::get('/service/show/{id}', 'App\Http\Controllers\cms\ServiceController@show')->name('cms.services.show');
+        Route::get('/service/create', 'App\Http\Controllers\cms\ServiceController@create')->name("cms.services.create");
+        Route::post('/service/store', 'App\Http\Controllers\cms\ServiceController@store')->name("cms.services.store");
+        Route::get('/service/delete/{id}', 'App\Http\Controllers\cms\ServiceController@delete')->name("cms.services.delete");
+        Route::get('/service/edit/{id}', 'App\Http\Controllers\cms\ServiceController@edit')->name("cms.services.edit");
+        Route::post('/service/update/{id}', 'App\Http\Controllers\cms\ServiceController@update')->name("cms.services.update");
     });
 });

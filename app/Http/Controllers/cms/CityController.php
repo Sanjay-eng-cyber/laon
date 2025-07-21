@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cms;
 
 use App\Models\City;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -34,6 +35,7 @@ class CityController extends Controller
 
         $city = new City;
         $city->name = $request->name;
+        $city->slug = Str::slug($request->name);
         if ($city->save()) {
             return redirect()->route('cms.cities.index')->with(
                 [
@@ -63,6 +65,7 @@ class CityController extends Controller
 
         $city = City::findOrFail($id);
         $city->name = $request->name;
+        $city->slug = Str::slug($request->name);
         if ($city->save()) {
             return redirect()->route('cms.cities.index')->with(
                 [

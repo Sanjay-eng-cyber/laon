@@ -337,8 +337,8 @@
                       </a>
                   </li>
                   <li class="menu">
-                      <a href="{{ route('cms.offer.index') }}"
-                          aria-expanded="{{ route('cms.offer.index') == request()->url() ? 'true' : 'false' }}"
+                      <a href="{{ route('cms.services.index') }}"
+                          aria-expanded="{{ route('cms.services.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
                               <svg xmlns="http://www.w3.org/2000/svg" height="1em"
@@ -346,11 +346,11 @@
                                   <path
                                       d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
                               </svg>
-                              <span>Offers</span>
+                              <span>Services</span>
                           </div>
                       </a>
                   </li>
-                  <li class="menu">
+                  {{-- <li class="menu">
                       <a href="{{ route('cms.exhibition.index') }}"
                           aria-expanded="{{ route('cms.exhibition.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
@@ -363,8 +363,8 @@
                               <span>Exhibitions</span>
                           </div>
                       </a>
-                  </li>
-                  <li class="menu">
+                  </li> --}}
+                  {{-- <li class="menu">
                       <a href="{{ route('cms.data.index') }}"
                           aria-expanded="{{ route('cms.data.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
@@ -377,7 +377,7 @@
                               <span>Data</span>
                           </div>
                       </a>
-                  </li>
+                  </li> --}}
                   {{-- <li class="menu">
                       <a href="{{ route('backend.user.index') }}"
                           aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"

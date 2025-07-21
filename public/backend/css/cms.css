@@ -218,9 +218,10 @@ padding all page */
 }
 
 @media (max-width: 576px) {
-.dashboard-card{
-    margin-top: 20px;
-}
+    .dashboard-card {
+        margin-top: 20px;
+    }
+
     img.navbar-logo {
         width: 60px;
 
@@ -343,3 +344,25 @@ thead tr th:first-child {
     border-radius: 5px;
 }
 
+.city-tags {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.city-badge {
+    background-color: #f0f0f0;
+    color: #0b0b0b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.city-badge:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
