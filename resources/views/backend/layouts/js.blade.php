@@ -4,6 +4,8 @@
 <script src="backend/bootstrap/js/bootstrap.min.js"></script>
 <script src="backend/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="assets/js/app.js"></script>
+<!-- Select2 JS -->
+<script src="{{ asset('backend/plugins/select2/select2.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         App.init();
@@ -59,5 +61,4 @@
     @endif
 </script>
 
-<script src="{{asset('assets/node_modules/tinymce/tinymce.min.js')}}"></script>
-
+<script src="{{ asset('assets/node_modules/tinymce/tinymce.min.js') }}"></script>

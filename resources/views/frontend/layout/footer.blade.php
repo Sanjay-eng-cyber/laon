@@ -73,11 +73,9 @@
                     <div class="widget-footer mt40">
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">Car Loan</a></li>
-                            <li><a href="#">Personal Loan</a></li>
-                            <li><a href="#">Education Loan</a></li>
-                            <li><a href="#">Business Loan</a></li>
-                            <li><a href="#">Home Loan</a></li>
+                            @foreach ($services as $ser)
+                                <li><a href="{{ route('services.show', $ser->slug) }}">{{ ucWords($ser->name) }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- /.widget footer -->

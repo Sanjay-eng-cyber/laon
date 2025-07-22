@@ -31,9 +31,10 @@
                             enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group mb-12 row">
-                                <div class="col-xl-6  col-md-6 col-sm-12">
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label>Cities</label>
-                                    <select class="col-12 form-control" name="city_id[]" multiple required>
+                                    <select class="col-12 form-control select2" name="city_id[]" id="city_id" multiple
+                                        required>
                                         <option value="">Select City</option>
                                         @foreach ($cities as $key => $city)
                                             @if (old('city_id'))
@@ -113,7 +114,6 @@
     </div>
 @endsection
 @section('js')
-    {{-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/4/tinymce.min.js"> --}}
     </script>
     <script>
         tinymce.init({
@@ -138,6 +138,14 @@
             //     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
 
             // ]
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#city_id').select2({
+                placeholder: "Select Cities",
+                width: '100%'
+            });
         });
     </script>
 @endsection
