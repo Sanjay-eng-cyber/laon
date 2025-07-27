@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\InquiryController;
 use App\Http\Controllers\frontend\ServiceController;
 
 Route::domain(config('app.web_domain'))->group(
@@ -11,7 +12,8 @@ Route::domain(config('app.web_domain'))->group(
         // });
         Route::get('/', [HomeController::class, 'index'])->name('dashboard');
         Route::get('services', [ServiceController::class, 'index'])->name('services.index');
-        Route::get('service/{slug}', [ServiceController::class, 'show'])->name('services.show');
+        Route::get('service/{service_slug}/{city_slug?}', [ServiceController::class, 'show'])->name('services.show');
+        Route::post('inquiry/store', [InquiryController::class, 'store'])->name('inquiry.store');
         // Route::get('loans', function () {
         //     return view('frontend/loans/index');
         // })->name('loans');

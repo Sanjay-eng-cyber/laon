@@ -111,14 +111,15 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="service-img-box mb30 text-center outline h-100">
                                 <div class="service-img">
-                                    <a href="#" class="imghover"><img
+                                    <a href="{{ route('services.show', $ser->slug) }}" class="imghover"><img
                                             src="{{ asset('storage/images/services/' . $ser->image) }}" alt="service"
                                             class="img-fluid"></a>
                                 </div>
                                 <div class="service-content bg-white pinside30">
-                                    <h2><a href="personal-loan.html" class="title">{{ $ser->name }}</a></h2>
+                                    <h2><a href="{{ route('services.show', $ser->slug) }}"
+                                            class="title">{{ ucwords($ser->name) }}</a></h2>
                                     <p>{!! str($ser->short_desc)->limit(120) !!}</p>
-                                    <a href="#" class="btn-link">Read more</a>
+                                    <a href="{{ route('services.show', $ser->slug) }}" class="btn-link">Read more</a>
                                 </div>
                             </div>
                         </div>
@@ -371,111 +372,121 @@
                                     </div>
                                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingTwo">
-                                        <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                            accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                                            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</div>
+                                        <div class="panel-body">Yes, absolutely! At The Loan Company, we encourage early
+                                            loan repayment. You have the flexibility to pay off your loan before the term
+                                            ends without any penalties or additional charges. Feel free to save on interest
+                                            and clear your debt sooner.div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingThree">
-                                        <h4 class="panel-title"> <a class="collapsed" role="button"
-                                                data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree"><i
-                                                    class="fa fa-plus-circle sign"></i>Do you offering refinancing ?</a>
-                                        </h4>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title"> <a class="collapsed" role="button"
+                                                    data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree"><i
+                                                        class="fa fa-plus-circle sign"></i>Do you offering refinancing
+                                                    ?</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                            aria-labelledby="headingThree">
+                                            <div class="panel-body">Yes, we offer refinancing options at The Loan Company.
+                                                If you have an existing loan, you can explore the possibility of refinancing
+                                                it with us. Refinancing allows you to obtain a new loan with better terms,
+                                                such as a lower interest rate or extended repayment period. It can help you
+                                                save money or manage your finances more effectively. Contact us to discuss
+                                                your refinancing options today
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                        aria-labelledby="headingThree">
-                                        <div class="panel-body">Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                            squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                            helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingFour">
+                                            <h4 class="panel-title"> <a class="collapsed" role="button"
+                                                    data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+                                                    aria-expanded="false" aria-controls="collapseFour"><i
+                                                        class="fa fa-plus-circle sign"></i>When should i apply?</a> </h4>
+                                        </div>
+                                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                            aria-labelledby="headingFour">
+                                            <div class="panel-body">You can apply for a personal loan from The Loan Company
+                                                at any time that suits your needs. Whether you have an urgent financial
+                                                requirement or are planning for an upcoming expense, we are here to assist
+                                                you. Our application process is convenient and straightforward. Simply apply
+                                                when you are ready, and we will guide you through the rest. Don’t hesitate
+                                                to reach out to us whenever you’re prepared to take the next step.</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingFour">
-                                        <h4 class="panel-title"> <a class="collapsed" role="button"
-                                                data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
-                                                aria-expanded="false" aria-controls="collapseFour"><i
-                                                    class="fa fa-plus-circle sign"></i>When should i apply?</a> </h4>
-                                    </div>
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                                        aria-labelledby="headingFour">
-                                        <div class="panel-body">Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                            haven't heard of them accusamus labore sustainable VHS. </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-space80">
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="mb60 text-center section-title">
+                                <!-- section title start-->
+                                <h1>Latest News from Loan Company</h1>
+                                <p> Our mission is to deliver reliable, latest news and opinions.</p>
+                            </div>
+                            <!-- /.section title start-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="post-block mb30">
+                                <div class="post-img">
+                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img.jpg"
+                                            alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
+                                </div>
+                                <div class="bg-white pinside40 outline">
+                                    <h2><a href="blog-single.html" class="title">Couples Buying New Home Loan</a></h2>
+                                    <p class="meta"><span class="meta-date">Aug 25, 2017</span><span
+                                            class="meta-author">By<a href="#"> Admin</a></span></p>
+                                    <p>Fusce sed erat libasellus id orci quis ligula pret do lectus velit, a malesuada urna
+                                        sodales eu.</p>
+                                    <a href="blog-single.html" class="btn-link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="post-block mb30">
+                                <div class="post-img">
+                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img-1.jpg"
+                                            alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
+                                </div>
+                                <div class="bg-white pinside40 outline">
+                                    <h2><a href="blog-single.html" class="title">Business Man Thinking for Loan</a></h2>
+                                    <p class="meta"><span class="meta-date">Aug 24, 2017</span><span
+                                            class="meta-author">By<a href="#"> Admin</a></span></p>
+                                    <p>Nulla vehicula nibh vel malesuada dapibus ringilla nunc mi sit amet fbendum
+                                        sapierttitor
+                                        nibh. </p>
+                                    <a href="blog-single.html" class="btn-link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="post-block mb30">
+                                <div class="post-img">
+                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img-2.jpg"
+                                            alt="Borrow - Loan Company Website Templates" class="img-fluid"></a>
+                                </div>
+                                <div class="bg-white pinside40 outline">
+                                    <h2><a href="blog-single.html" class="title">Are you students looking for loan ?</a>
+                                    </h2>
+                                    <p class="meta"><span class="meta-date">Aug 23, 2017</span><span
+                                            class="meta-author">By<a href="#"> Admin</a></span></p>
+                                    <p>Malesuada urna sodales euusce sed erat libasellus id orci quis ligula pretium co ctus
+                                        velit.</p>
+                                    <a href="blog-single.html" class="btn-link">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section-space80">
-            <div class="container">
-                <div class="row">
-                    <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
-                        <div class="mb60 text-center section-title">
-                            <!-- section title start-->
-                            <h1>Latest News from Loan Company</h1>
-                            <p> Our mission is to deliver reliable, latest news and opinions.</p>
-                        </div>
-                        <!-- /.section title start-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="post-block mb30">
-                            <div class="post-img">
-                                <a href="blog-single.html" class="imghover"><img src="images/blog-img.jpg"
-                                        alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
-                            </div>
-                            <div class="bg-white pinside40 outline">
-                                <h2><a href="blog-single.html" class="title">Couples Buying New Home Loan</a></h2>
-                                <p class="meta"><span class="meta-date">Aug 25, 2017</span><span
-                                        class="meta-author">By<a href="#"> Admin</a></span></p>
-                                <p>Fusce sed erat libasellus id orci quis ligula pret do lectus velit, a malesuada urna
-                                    sodales eu.</p>
-                                <a href="blog-single.html" class="btn-link">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="post-block mb30">
-                            <div class="post-img">
-                                <a href="blog-single.html" class="imghover"><img src="images/blog-img-1.jpg"
-                                        alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
-                            </div>
-                            <div class="bg-white pinside40 outline">
-                                <h2><a href="blog-single.html" class="title">Business Man Thinking for Loan</a></h2>
-                                <p class="meta"><span class="meta-date">Aug 24, 2017</span><span
-                                        class="meta-author">By<a href="#"> Admin</a></span></p>
-                                <p>Nulla vehicula nibh vel malesuada dapibus ringilla nunc mi sit amet fbendum sapierttitor
-                                    nibh. </p>
-                                <a href="blog-single.html" class="btn-link">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="post-block mb30">
-                            <div class="post-img">
-                                <a href="blog-single.html" class="imghover"><img src="images/blog-img-2.jpg"
-                                        alt="Borrow - Loan Company Website Templates" class="img-fluid"></a>
-                            </div>
-                            <div class="bg-white pinside40 outline">
-                                <h2><a href="blog-single.html" class="title">Are you students looking for loan ?</a></h2>
-                                <p class="meta"><span class="meta-date">Aug 23, 2017</span><span
-                                        class="meta-author">By<a href="#"> Admin</a></span></p>
-                                <p>Malesuada urna sodales euusce sed erat libasellus id orci quis ligula pretium co ctus
-                                    velit.</p>
-                                <a href="blog-single.html" class="btn-link">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </body>
 @endsection
 

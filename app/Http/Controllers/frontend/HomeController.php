@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $services = Service::where('type', 'loan')->limit(3)->get();
+        $services = Service::where('type', 'loan')->latest()->limit(3)->get();
         return view('index',compact('services'));
     }
 }

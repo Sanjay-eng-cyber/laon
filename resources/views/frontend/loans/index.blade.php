@@ -58,7 +58,8 @@
                                                      alt="Borrow - Loan Company Website Template " class="img-fluid"></a>
                                          </div>
                                          <div class="service-content bg-white pinside30 outline">
-                                             <h2><a href="personal-loan.html" class="title">{{ $ser->name }}</a></h2>
+                                             <h2><a href="{{ route('services.show', $ser->slug) }}"
+                                                     class="title">{{ ucwords($ser->name) }}</a></h2>
                                              <p>{!! str($ser->short_desc)->limit(120) !!}</p>
                                              <a href="{{ route('services.show', $ser->slug) }}" class="btn-link">Read
                                                  more</a>

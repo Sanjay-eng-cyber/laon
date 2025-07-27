@@ -286,7 +286,7 @@
                                                               loan with better terms, such as a lower interest rate or
                                                               extended repayment period. It can help you save money or
                                                               manage your finances more effectively. Contact us to discuss
-                                                              your refinancing options today</p>
+                                                              your refinancing options today.</p>
                                                       </div>
                                                   </div>
                                               </div>
@@ -308,7 +308,7 @@
                                                               convenient and straightforward. Simply apply when you are
                                                               ready, and we will guide you through the rest. Don’t hesitate
                                                               to reach out to us whenever you’re prepared to take the next
-                                                              step.p>
+                                                              step.
                                                       </div>
                                                   </div>
                                               </div>
@@ -353,64 +353,90 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-md-12">
-                                          <form class="">
+                                          <form action="{{ route('inquiry.store') }}" method="POST" class="row g-3">
+                                              @csrf
+                                              <div class="col-md-6">
+                                                  <select name="service_id" class="form-control select2" id="service_id"
+                                                      required>
+                                                      <option value="" selected disabled>Select Loan Type</option>
+                                                      @foreach ($services as $ser)
+                                                          <option value="{{ $ser->id }}"
+                                                              {{ old('service_id', $service->id ?? '') == $ser->id ? 'selected' : '' }}>
+                                                              {{ ucWords($ser->name) }}
+                                                          </option>
+                                                      @endforeach
+                                                  </select>
+                                                  @if ($errors->has('service_id'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('service_id') }}
+                                                      </div>
+                                                  @endif
+                                              </div>
 
-                                              <fieldset>
-                                                  <div class="row">
-                                                      <!-- Text input-->
-                                                      <div
-                                                          class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-group ">
-                                                          <label class="control-label" for="name">Name</label>
-                                                          <div class="">
-                                                              <input id="name" name="name" type="text"
-                                                                  placeholder="Name" class="form-control input-md"
-                                                                  required>
-                                                              <span class="help-block"> </span>
-                                                          </div>
+                                              <div class="col-md-6">
+                                                  <select name="city_id" class="form-control select2" id="city_id"
+                                                      required>
+                                                      <option value="" selected disabled>Select City</option>
+                                                      @foreach ($service->cities as $c)
+                                                          <option value="{{ $c->id }}"
+                                                              @if ($city) {{ old('city_id', $city->id ?? '') == $c->id ? 'selected' : '' }} @endif>
+                                                              {{ ucWords($c->name) }} </option>
+                                                      @endforeach
+                                                  </select>
+                                                  @if ($errors->has('city_id'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('city_id') }}
                                                       </div>
-                                                      <!-- Text input-->
-                                                      <div
-                                                          class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-group ">
-                                                          <label class=" control-label" for="email">E-Mail</label>
-                                                          <div class="">
-                                                              <input id="email" name="email" type="text"
-                                                                  placeholder="E-mail" class="form-control input-md">
-                                                          </div>
+                                                  @endif
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <input type="text" name="name" class="form-control mt-1"
+                                                      placeholder="Your Name" minlength="5" maxlength="180"
+                                                      value="{{ old('name') }}" required>
+                                                  @if ($errors->has('name'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('name') }}
                                                       </div>
-                                                      <!-- Text input-->
-                                                      <div
-                                                          class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-group ">
-                                                          <label class="control-label" for="phone">Phone</label>
-                                                          <div class="">
-                                                              <input id="phone" name="phone" type="text"
-                                                                  placeholder="Phone" class="form-control">
-                                                          </div>
-                                                      </div>
-                                                      <div
-                                                          class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-group slide-ranger ">
-                                                          <p id="slider-range-min"></p>
-                                                          <label for="amount" class="control-label">Loan Amount</label>
-                                                          <input type="text" id="amount" readonly
-                                                              class="form-control">
-                                                      </div>
-                                                      <div
-                                                          class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group slide-ranger ">
-                                                          <p id="slider-range-max"></p>
-                                                          <label for="amount" class="control-label">Year</label>
-                                                          <input type="text" id="j" readonly
-                                                              class="form-control">
-                                                      </div>
-                                                      <!-- Button -->
-                                                      <div class="form-group col-xl-4 col-lg-12 col-md-6 col-sm-12 col-12">
-                                                          <div class="">
-                                                              <button id="Submit" name="Submit"
-                                                                  class="btn btn-primary btn-block">Submit New
-                                                                  Quote</button>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </fieldset>
+                                                  @endif
+                                              </div>
 
+                                              <div class="col-md-6">
+                                                  <input type="email" name="email" class="form-control mt-1"
+                                                      placeholder="Email" minlength="5" maxlength="60"
+                                                      value="{{ old('email') }}" required>
+                                                  @if ($errors->has('email'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('email') }}
+                                                      </div>
+                                                  @endif
+                                              </div>
+
+                                              <div class="col-md-6">
+                                                  <input type="text" name="phone" class="form-control"
+                                                      placeholder="Phone" minlength="10" maxlength="10"
+                                                      value="{{ old('phone') }}" required>
+                                                  @if ($errors->has('phone'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('phone') }}
+                                                      </div>
+                                                  @endif
+                                              </div>
+
+
+                                              <div class="col-md-6">
+                                                  <input type="date" name="date" class="form-control"
+                                                      value="{{ old('date') }}" required>
+                                                  @if ($errors->has('date'))
+                                                      <div class="text-danger" role="alert">
+                                                          {{ $errors->first('date') }}
+                                                      </div>
+                                                  @endif
+                                              </div>
+
+                                              <div class="col-12">
+                                                  <button type="submit" class="btn btn-danger w-100">Send
+                                                      Request</button>
+                                              </div>
                                           </form>
                                       </div>
                                   </div>
@@ -427,8 +453,13 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                          @foreach ($service->cities as $city)
-                                              <strong><a href="#">{{ ucfirst($city->name) }}</a></strong>
+                                          @foreach ($service->cities as $c)
+                                              @continue(isset($city) && $c->slug === $city->slug)
+                                              <strong>
+                                                  <a
+                                                      href="{{ route('services.show', ['service_slug' => $service->slug, 'city_slug' => $c->slug]) }}">{{ ucfirst($c->name) }}
+                                                  </a>
+                                              </strong>
                                           @endforeach
                                       </div>
                                   </div>
@@ -455,3 +486,17 @@
       </div>
   @endsection
   <!-- /.content end -->
+  @section('js')
+      <script>
+          $(document).ready(function() {
+              $('#service_id').select2({
+                  placeholder: "Select Loan",
+                  width: '100%'
+              });
+              $('#city_id').select2({
+                  placeholder: "Select City",
+                  width: '100%'
+              });
+          });
+      </script>
+  @endsection
