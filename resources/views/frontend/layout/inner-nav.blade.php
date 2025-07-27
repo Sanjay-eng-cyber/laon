@@ -107,7 +107,7 @@
                                           class="animsition-link">Education Loan Single</a></li> --}}
                               </ul>
                           </li>
-                          <li><a href="blog-listing.html" class="animsition-link">Blogs</a>
+                          <li><a href="{{route('blogs.index')}}" class="animsition-link">Blogs</a>
                               {{-- <ul> --}}
                               {{-- <li><a href="blog-listing.html" title="Blog Listing" class="animsition-link">Blogs</a></li> --}}
                               {{-- <li><a href="blog-single.html" title="Blog Single" class="animsition-link">Blog

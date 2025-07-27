@@ -81,7 +81,7 @@
                                        <li><a href="team.html" title="Team" class="animsition-link">Team</a></li>
                                    </ul>
                                </li> --}}
-                               <li><a href="blog-listing.html" class="animsition-link">Blogs</a>
+                               <li><a href="{{route('blogs.index')}}" class="animsition-link">Blogs</a>
                                    {{-- <ul>
                                        <li><a href="blog-listing.html" title="Blog Listing" class="animsition-link">Blog
                                                Listing</a></li>
