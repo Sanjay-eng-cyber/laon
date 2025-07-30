@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        return view('frontend.blogs.index');
+        $blogs = Post::where('type', 'blog')->where('published', 1)->latest()->paginate(10);
+        return view('frontend.blogs.index', compact('blogs'));
     }
 
-      public function show()
+    public function show($slug)
     {
-        return view('frontend.blogs.show');
+        $blog = Post::where('slug', $slug)->where('published', 1)->firstOrFail();
+        $relatedBlogs = Post::where([
+            ['service_id', $blog->service_id],
+            ['type', 'blog'],
+            ['published', 1],
+            ['id', '!=', $blog->id]
+        ])->limit(5)->latest()->get();
+        return view('frontend.blogs.show', compact('blog', 'relatedBlogs'));
     }
 }

@@ -4842,6 +4842,21 @@ Landing Page Template
   color: #3c4d6b;
 }
 
+.blogs-img {
+  height: 200px;
+  width: 350px;
+}
+
+.blog-img{
+  height: 300px;
+  width: 80%;
+}
+
+.rp{
+  height: 60px;
+  width: 120%;
+}
+
 @media screen and (max-width:1366px) {
   .slider-captions {
     position: absolute;

@@ -98,7 +98,7 @@ class ServiceController extends Controller
 
         $service = Service::findOrFail($id);
         if ($request->hasFile('image')) {
-            if (!Storage::exists('images/services/' . $service->image)) {
+            if (Storage::disk('public')->exists('images/services/' . $service->image)) {
                 Storage::disk('public')->delete('images/services/' . $service->image);
             }
             $file = $request->file('image');

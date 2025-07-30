@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title> @yield('title') - Admin </title>
+    <title> @yield('title') | Admin </title>
     @include('backend.layouts.header')
     @yield('cdn')
     <style>

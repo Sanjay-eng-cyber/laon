@@ -36,6 +36,10 @@ div {
     min-height: 20em;
 }
 
+.min-height-23em {
+    min-height: 23em;
+}
+
 .cust-title {
     color: #4361ee !important;
     font-weight: 700;
@@ -372,4 +376,24 @@ thead tr th:first-child {
     padding: 6px 12px;
     border: 1px solid #ced4da;
     border-radius: 4px;
+}
+
+.nav-link {
+    color: #0b0b0b;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    /* Bootstrap primary blue */
+    color: white !important;
+    border-color: #007bff #007bff #fff;
+    /* optional: remove bottom border break */
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #007bff;
+    /* Bootstrap primary blue */
+    color: white !important;
 }

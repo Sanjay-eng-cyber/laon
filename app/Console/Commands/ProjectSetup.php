@@ -34,6 +34,10 @@ class ProjectSetup extends Command
         $this->line('...');
         Storage::disk('public')->makeDirectory('images/services');
         $this->line('...');
+        Storage::disk('public')->makeDirectory('images/blog');
+        $this->line('...');
+        Storage::disk('public')->makeDirectory('images/news');
+        $this->line('...');
         $this->info('required directories created.');
     }
 }

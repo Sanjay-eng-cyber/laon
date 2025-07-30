@@ -49,23 +49,33 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="wrapper-content bg-white pinside40">
                         <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="post-block mb30">
-                                    <div class="post-img">
-                                        <a href="blog-single.html" class="imghover"><img src="images/blog-img.jpg"
-                                                alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
-                                    </div>
-                                    <div class="bg-white pinside40 outline">
-                                        <h2><a href="blog-single.html" class="title">Couples Happy with Home Loan</a></h2>
-                                        <p class="meta"><span class="meta-date">Aug 25, 2017</span><span
-                                                class="meta-author">By<a href="#"> Admin</a></span></p>
-                                        <p>Fusce sed erat libasellus id orci quis ligula pret do lectus velit, a malesuada
-                                            urna sodales.</p>
-                                        <a href="blog-single.html" class="btn-link">Read More</a>
+                            @forelse ($blogs as $blog)
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                    <div class="post-block mb30">
+                                        <div class="post-img">
+                                            <a href="{{ route('blog.show', $blog->slug) }}" class="imghover"><img
+                                                    src="{{ asset('storage/images/' . $blog->type . '/' . $blog->image) }}"
+                                                    alt="Borrow - Loan Company Website Template"
+                                                    class="img-fluid blogs-img"></a>
+                                        </div>
+                                        <div class="bg-white pinside40 outline">
+                                            <h2><a href="{{ route('blog.show', $blog->slug) }}"
+                                                    class="title">{{ ucwords($blog->title) }}</a>
+                                            </h2>
+                                            <p class="meta"><span
+                                                    class="meta-date">{{ dd_format($blog->created_at, 'M d, Y') }}</span>
+                                                {{-- <span class="meta-author">By<a href="#"> Admin</a></span> --}}
+                                            </p>
+                                            <p>{!! str_limit($blog->body, 200) !!}</p>
+                                            <a href="{{ route('blog.show', $blog->slug) }}" class="btn-link">Read More</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+
+                            @empty
+                                <div>No records found</div>
+                            @endforelse
+                            {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div class="post-block mb30">
                                     <div class="post-img">
                                         <a href="blog-single.html" class="imghover"><img src="images/blog-img-1.jpg"
@@ -80,8 +90,8 @@
                                         <a href="blog-single.html" class="btn-link">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            </div> --}}
+                            {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div class="post-block mb30">
                                     <div class="post-img">
                                         <a href="blog-single.html" class="imghover"><img src="images/blog-img-2.jpg"
@@ -97,8 +107,8 @@
                                         <a href="blog-single.html" class="btn-link">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            </div> --}}
+                            {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div class="post-block mb30">
                                     <div class="post-img">
                                         <a href="blog-single.html" class="imghover"><img src="images/blog-img-3.jpg"
@@ -113,8 +123,8 @@
                                         <a href="blog-single.html" class="btn-link">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            </div> --}}
+                            {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div class="post-block mb30">
                                     <div class="post-img">
                                         <a href="blog-single.html" class="imghover"><img src="images/blog-img-4.jpg"
@@ -130,9 +140,9 @@
                                         <a href="blog-single.html" class="btn-link">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="post-block mb30">
+                            </div> --}}
+                            {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12"> --}}
+                            {{-- <div class="post-block mb30">
                                     <div class="post-img">
                                         <a href="blog-single.html" class="imghover"><img src="images/blog-img-5.jpg"
                                                 alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
@@ -146,22 +156,20 @@
                                         <a href="blog-single.html" class="btn-link">Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
-                                <div class="st-pagination">
-                                    <!--st-pagination-->
-                                    <ul class="pagination">
-                                        <li> <a href="#" aria-label="previous"><span
-                                                    aria-hidden="true">previous</span></a></li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li> <a href="#" aria-label="Next"><span aria-hidden="true">next</span></a>
-                                        </li>
-                                    </ul>
+                            </div> --}}
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                            <div class="st-pagination">
+                                <!--st-pagination-->
+                                <div class="pagination col-lg-12 mt-3">
+                                    <div class=" text-center mx-auto">
+                                        <ul class="pagination text-center">
+                                            {{ $blogs->appends(Request::all())->links('pagination::bootstrap-4') }}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <!--/.st-pagination-->
                             </div>
+                            <!--/.st-pagination-->
                         </div>
                     </div>
                 </div>

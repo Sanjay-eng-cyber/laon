@@ -103,6 +103,8 @@
                                                         <a class="dropdown-item"
                                                             href="{{ route('cms.services.edit', $service->id) }}">Edit</a>
                                                         <a class="dropdown-item"
+                                                            href="{{ route('cms.post.index', $service->id) }}">View Post</a>
+                                                        <a class="dropdown-item"
                                                             href="{{ route('cms.services.delete', $service->id) }}"
                                                             onclick="return confirm('Are you sure you want delete this Service?');">Delete</a>
                                                     </div>

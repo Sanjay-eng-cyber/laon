@@ -1,5 +1,5 @@
 @extends('frontend.layout.app')
-@section('title', 'Blogs')
+@section('title', 'Blog | ' . ucwords($blog->title))
 @section('content')
     <div class="page-header">
         <div class="container">
@@ -8,7 +8,7 @@
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="index.html">Home</a></li>
-                            <li class="active">Blog Single</li>
+                            <li class="active">{{ ucwords($blog->title) }}</li>
                         </ol>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                     <div class="bg-white pinside30">
                         <div class="row">
                             <div class="col-xl-4 col-lg-4 col-md-9 col-sm-12 col-12">
-                                <h1 class="page-title">Blog Single</h1>
+                                <h1 class="page-title">{{ ucwords($blog->title) }}</h1>
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-3 col-sm-12 col-12">
                                 <div class="row">
@@ -54,45 +54,25 @@
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="post-holder">
                                             <div class="post-block mb40">
-                                                <div class="post-img mb30"><img src="{{ asset('images/blog-post-1.jpg') }}"
-                                                        alt="Borrow - Loan Company Website Template" class="img-fluid">
+                                                <div class="post-img mb30"><img
+                                                        src="{{ asset('storage/images/' . $blog->type . '/' . $blog->image) }}"
+                                                        alt="Borrow - Loan Company Website Template"
+                                                        class="img-fluid blog-img">
                                                 </div>
                                                 <div class="bg-white">
-                                                    <h1>Bigger home still the goal</h1>
-                                                    <p class="meta"><span class="meta-date">Jan 25, 2017</span><span
-                                                            class="meta-author">By<a href="#" class="meta-link">
+                                                    <h1>{{ ucwords($blog->title) }}</h1>
+                                                    <p class="meta"><span
+                                                            class="meta-date">{{ dd_format($blog->created_at, 'M d, Y') }}</span>
+                                                        {{-- <span class="meta-author">By<a href="#" class="meta-link">
                                                                 Admin</a></span><span class="meta-comments">05<a
-                                                                href="#" class=" meta-link"> Comments</a> </span></p>
-                                                    <p>Morbi accumsan, lectus eu maximus placerat, lacus justo gravida
-                                                        dolor, vel vehicula dui magna sed leo. Sed porttitor ante lacus,
-                                                        quis tincidunt felis pretium sit amet lorem Pellentesque libero
-                                                        nulla, consectetur et lectus at commodo cursus urna. </p>
-                                                    <p>Sed semper dolor et vehicula pulvinar quis finibus nuncecenas ac
-                                                        mattis velitras convallis tristique enim et dignissim aecenas eu
-                                                        mollis leoed convallis sapivita is one elacinia lectus egestatiam
-                                                        purus feugiat sit amet lacinia lectus egestatiam loerm is accumsan
-                                                        metus at viverra sempered faucibus ssim pretium. </p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elitras molestie
-                                                        nunceu urna mattis vitae scelerisque nunceu urna mattis vitaefelis
-                                                        viverra ullam eulorem its bibendum nislvel malesuadat amet
-                                                        consectetur molestie nunceu. </p>
-                                                    <p>Consectetur adipiscing elitras molestie nunceu urna mattis vitae
-                                                        scelerisque nunceu urna mattis vitaefelis viverra ullam eulorem its
-                                                        bibendum nislvel malesuadat amet conrra ullam eulorem its
-                                                        bibenmolesnceu. </p>
-                                                    <blockquote>
-                                                        <p>The blockquote element is used to indicate the sector quotation
-                                                            of a large section of text from lorem another source.</p>
-                                                    </blockquote>
-                                                    <p class="name">- Massi Doe</p>
-                                                    <p>Consectetur adipiscing elitras molestie nunceu urna mattis vitae
-                                                        scelerisque nunceu urna mattis vitaefelis viverra ullam eulorem its
-                                                        bibendum nislvel malesuadat amet conrra ullam eulorem its
-                                                        bibenmolesnceu. </p>
+                                                                href="#" class=" meta-link"> Comments</a>
+                                                        </span> --}}
+                                                    </p>
+                                                    <p>{!! $blog->body !!}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="post-related mb40">
+                                        {{-- <div class="post-related mb40">
                                             <!-- post related -->
                                             <div class="row">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -126,8 +106,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="post-navigation mb40">
+                                        </div> --}}
+                                        {{-- <div class="post-navigation mb40">
                                             <!-- post navigation -->
                                             <div class="row">
 
@@ -147,8 +127,8 @@
                                                 </div>
 
                                             </div>
-                                        </div>
-                                        <div class="post-author mb40">
+                                        </div> --}}
+                                        {{-- <div class="post-author mb40">
                                             <!-- post author -->
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
@@ -172,8 +152,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="comments-area mb40">
+                                        </div> --}}
+                                        {{-- <div class="comments-area mb40">
                                             <h2 class="comments-title">4 Comments</h2>
                                             <ul class="comment-list listnone">
                                                 <li class="comment">
@@ -279,8 +259,8 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
-                                        <div class="leave-comments pinside30 bg-primary mb30">
+                                        </div> --}}
+                                        {{-- <div class="leave-comments pinside30 bg-primary mb30">
                                             <h2 class="reply-title">Leave A Comment</h2>
                                             <form class="reply-form">
                                                 <div class="row">
@@ -325,14 +305,14 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="sidebar-area">
                                     <div class="row">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <div class="bg-primary">
                                                 <div class="widget widget-search">
                                                     <h3 class="widget-title">Search Bar</h3>
@@ -346,8 +326,8 @@
                                                     <!-- /input-group -->
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        </div> --}}
+                                        {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <div class="bg-primary">
                                                 <div class="widget widget-category">
                                                     <h3 class="widget-title">Categories</h3>
@@ -361,36 +341,43 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <div class="bg-primary">
                                                 <div class="widget widget-recent-post">
                                                     <h3 class="widget-title mb30">Recent post</h3>
                                                     <ul class="listnone">
-                                                        <li>
-                                                            <div class="recent-block mb20">
-                                                                <div class="row">
-                                                                    <div class="col-xl-4 col-lg-4 col-md-2 col-sm-5 col-5">
-                                                                        <a href="#"><img
-                                                                                src="{{ asset('images/recent-img-1.jpg') }}"
-                                                                                alt="Borrow - Loan Company Website Template"
-                                                                                class="img-fluid mb10"></a>
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-xl-8 col-lg-8 col-md-10 col-sm-7 col-7">
-                                                                        <h4 class="recent-title mb10"><a href="#"
-                                                                                class="title">Bigger home still the
-                                                                                goal</a></h4>
-                                                                        <div class="meta">
-                                                                            <!-- post meta -->
-                                                                            <span class="meta-date">Aug 22, 2017 </span>
+                                                        @forelse ($relatedBlogs as $rb)
+                                                            <li>
+                                                                <div class="recent-block mb20">
+                                                                    <div class="row">
+                                                                        <div
+                                                                            class="col-xl-4 col-lg-4 col-md-2 col-sm-5 col-5">
+                                                                            <a href="{{ route('blog.show', $rb->slug) }}"><img
+                                                                                    src="{{ asset('storage/images/' . $rb->type . '/' . $rb->image) }}"
+                                                                                    alt="Borrow - Loan Company Website Template"
+                                                                                    class="img-fluid mb10 rp"></a>
                                                                         </div>
-                                                                        <!-- /.post meta -->
+                                                                        <div
+                                                                            class="col-xl-8 col-lg-8 col-md-10 col-sm-7 col-7">
+                                                                            <h4 class="recent-title mb10"><a
+                                                                                    href="{{ route('blog.show', $rb->slug) }}"
+                                                                                    class="title">{{ ucwords($rb->title) }}</a>
+                                                                            </h4>
+                                                                            <div class="meta">
+                                                                                <!-- post meta -->
+                                                                                <span
+                                                                                    class="meta-date">{{ dd_format($rb->created_at, 'M d, Y') }}</span>
+                                                                            </div>
+                                                                            <!-- /.post meta -->
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
+                                                            </li>
+                                                        @empty
+                                                            <div>No records found</div>
+                                                        @endforelse
+                                                        {{-- <li>
                                                             <div class="recent-block mb20">
                                                                 <div class="row">
                                                                     <div class="col-xl-4 col-lg-4 col-md-2 col-sm-5 col-5">
@@ -433,12 +420,12 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <div class="bg-primary">
                                                 <div class="widget widget-archives">
                                                     <h3 class="widget-title">Archives</h3>
@@ -451,8 +438,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        </div> --}}
+                                        {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <!--  tags -->
                                             <div class="bg-primary">
                                                 <div class="widget widget-tags">
@@ -467,7 +454,7 @@
                                                 </div>
                                                 <!-- /.widget well bg -->
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
