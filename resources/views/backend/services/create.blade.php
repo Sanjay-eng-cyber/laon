@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="col-12 mb-3 mt-2">
                                     <label for="descriptions">Description</label>
-                                    <textarea id="team-about" class="team-about" name="short_desc" minlength="3" maxlength="300">{{ old('short_desc') }}</textarea>
+                                    <textarea id="team-about" class="team-about" name="short_desc" minlength="3" maxlength="30000">{{ old('short_desc') }}</textarea>
                                     @if ($errors->has('short_desc'))
                                         <div class="text-danger" role="alert">{{ $errors->first('short_desc') }}</div>
                                     @endif
