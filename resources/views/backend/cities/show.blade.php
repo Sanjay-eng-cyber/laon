@@ -32,9 +32,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="degree3" class="cust-title"
@@ -43,15 +41,25 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @if ($city->services->count() != 0)
+                                            <div class="col-md-6">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="degree3" class="cust-title label-title">Services
+                                                            Name</label><br>
+                                                        <p class="label-title">
+                                                            {{ $city->services->pluck('name')->implode(', ') }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="widget-content widget-content-area">
-
-            </div> --}}
             </div>
         </div>
     @endsection

@@ -8,9 +8,6 @@ use App\Http\Controllers\frontend\ServiceController;
 
 Route::domain(config('app.web_domain'))->group(
     function () {
-        // Route::get('/', function () {
-        //     return view('index');
-        // });
         Route::get('/', [HomeController::class, 'index'])->name('dashboard');
         Route::get('services', [ServiceController::class, 'index'])->name('services.index');
         Route::get('service/{service_slug}/{city_slug?}', [ServiceController::class, 'show'])->name('services.show');

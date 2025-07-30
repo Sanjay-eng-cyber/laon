@@ -23,7 +23,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
     Route::get('/', 'App\Http\Controllers\cms\StatisticsController@index')->name("cms.statistics.index");
 
-    // Cities Controller
+    // City Controllers
     Route::get('/cities', 'App\Http\Controllers\cms\CityController@index')->name('cms.cities.index');
     Route::get('/city/show/{id}', 'App\Http\Controllers\cms\CityController@show')->name('cms.cities.show');
     Route::get('/city/create', 'App\Http\Controllers\cms\CityController@create')->name("cms.cities.create");
@@ -32,7 +32,7 @@ Route::domain(config('app.cms_domain'))->group(function () {
     Route::get('/city/edit/{id}', 'App\Http\Controllers\cms\CityController@edit')->name("cms.cities.edit");
     Route::post('/city/update/{id}', 'App\Http\Controllers\cms\CityController@update')->name("cms.cities.update");
 
-    // Services Controller
+    // Service Controllers
     Route::get('/services', 'App\Http\Controllers\cms\ServiceController@index')->name('cms.services.index');
     Route::get('/service/show/{id}', 'App\Http\Controllers\cms\ServiceController@show')->name('cms.services.show');
     Route::get('/service/create', 'App\Http\Controllers\cms\ServiceController@create')->name("cms.services.create");

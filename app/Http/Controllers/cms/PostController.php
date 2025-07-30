@@ -45,7 +45,7 @@ class PostController extends Controller
         $service = Service::findOrFail($service_id);
 
         $request->validate([
-            'title' => 'required|string|max:200|min:3',
+            'title' => 'required|string|max:190|min:3',
             'type' => 'required|string|in:blog,news',
             'image' => 'required|mimes:jpeg,png,jpg|max:1024',
             'body' => 'required|string|max:30000|min:3',
@@ -92,7 +92,7 @@ class PostController extends Controller
         $service = Service::findOrFail($service_id);
 
         $request->validate([
-            'title' => 'required|string|max:200|min:3',
+            'title' => 'required|string|max:190|min:3',
             'type' => 'required|string|in:blog,news',
             'image' => 'nullable|mimes:jpeg,png,jpg|max:1024',
             'body' => 'required|string|max:30000|min:3',

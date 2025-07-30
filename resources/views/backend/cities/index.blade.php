@@ -104,7 +104,7 @@
                                         </tr>
                                     @empty
                                         <tr class="text-md-center">
-                                            <td colspan="4">No Records Found</td>
+                                            <td colspan="3">No records found</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

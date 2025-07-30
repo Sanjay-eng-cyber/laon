@@ -35,7 +35,7 @@
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label for="title" class="">Title</label>
                                     <input type="text" class="form-control" id="title" placeholder="Enter Title"
-                                        minlength="3" maxlength="200" name="title" value="{{ old('title') }}" required>
+                                        minlength="3" maxlength="190" name="title" value="{{ old('title') }}" required>
                                     @if ($errors->has('title'))
                                         <div class="text-danger" role="alert">{{ $errors->first('title') }}</div>
                                     @endif

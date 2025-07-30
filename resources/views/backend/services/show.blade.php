@@ -49,7 +49,7 @@
                                                     class="label-title">type</label><br>
                                                 <p class="label-title">{{ $service->type }}</p>
                                             </div>
-                                        </div>
+                                        </div>  
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Rate Of
@@ -69,21 +69,21 @@
                                         @endif
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="degree3" class="cust-title"
-                                                    class="label-title">Description</label><br>
-                                                <div class="label-title">
-                                                    {!! $service->short_desc !!}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
                                                 <label for="degree3" class="cust-title label-title">Service in
                                                     Cities</label><br>
                                                 <div class="city-tags">
                                                     @foreach ($service->cities as $city)
                                                         <span class="city-badge">{{ ucwords($city->name) }}</span>
                                                     @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="degree3" class="cust-title"
+                                                    class="label-title">Description</label><br>
+                                                <div class="label-title">
+                                                    {!! $service->short_desc !!}
                                                 </div>
                                             </div>
                                         </div>
