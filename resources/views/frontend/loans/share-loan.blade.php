@@ -630,23 +630,13 @@
                                   </div>
                               </div>
                           </div>
-                          {{-- <div class="widget-share">
-                              <ul class="listnone">
-                                  <li><a href="#" class="btn-share btn-facebook" title="Share on Facebook"><i
-                                              class="fa fa-facebook"></i></a></li>
-                                  <li><a href="#" class="btn-share btn-twitter" title="Share on Twitter"><i
-                                              class="fa fa-twitter"></i></a></li>
-                                  <li>
-                                      <a href="#" class="btn-share btn-google" title="Share on Google"> <i
-                                              class="fa fa-google"></i></a>
-                                  </li>
-                                  <li><a href="#" class="btn-share btn-linkedin" title="Share on Linkedin"><i
-                                              class="fa fa-linkedin"></i></a></li>
-                              </ul>
-                          </div> --}}
                       </div>
                   </div>
               </div>
+              <a href="https://api.whatsapp.com/send/?phone=916260060190&text={{ urlencode('Hey I am interested for ' . $service->name . ($city ? ' in ' . $city->name : '')) }}"
+                  class="whatsapp-button" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+              </a>
           </div>
       </div>
   @endsection

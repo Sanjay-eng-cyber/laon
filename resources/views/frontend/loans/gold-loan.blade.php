@@ -465,6 +465,10 @@
                       </div>
                   </div>
               </div>
+              <a href="https://api.whatsapp.com/send/?phone=916260060190&text={{ urlencode('Hey I am interested for ' . $service->name . ($city ? ' in ' . $city->name : '')) }}"
+                  class="whatsapp-button" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+              </a>
           </div>
       </div>
   @endsection

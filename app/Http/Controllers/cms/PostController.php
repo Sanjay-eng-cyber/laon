@@ -16,14 +16,13 @@ class PostController extends Controller
         // dd($service_id);
         $service = Service::findOrFail($service_id);
         // dd($service->id);
-        $blogs = Post::where('type', 'blog')
-            ->where('service_id', $service->id)
+        $blogs = $service->posts()
+            ->where('type', 'blog')
             ->paginate(10, ['*'], 'blog_page');
 
-        $news = Post::where('type', 'news')
-            ->where('service_id', $service->id)
+        $news = $service->posts()
+            ->where('type', 'news')
             ->paginate(10, ['*'], 'news_page');
-        // dd($news->count(), $blogs->count());
         return view('backend.blogs.index', compact('blogs', 'news', 'service'));
     }
 
