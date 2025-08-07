@@ -673,4 +673,16 @@
           </div>
       </div>
   @endsection
+  @section('js')
+      <script>
+          function openChatModal() {
+              @if (auth()->check())
+                  document.getElementById("chatModal").style.display = "block";
+              @else
+                  window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
+                  return;
+              @endif
+          }
+      </script>
+  @endsection
   <!-- /.content end -->

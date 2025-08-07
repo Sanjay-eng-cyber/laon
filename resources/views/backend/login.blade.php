@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Login - Henry Raval</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('frontend/images/moon-logo.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/moon-logo.png') }}" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="backend/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,8 +27,8 @@
                         <div class="row text-center">
                             <div class="col col-12">
                                 <a href="/">
-                                    <img src="{{ asset('frontend/images/hr-logo.png') }}" width="30%"
-                                        class="" alt="logo">
+                                    <img src="{{ asset('frontend/images/hr-logo.png') }}" width="30%" class=""
+                                        alt="logo">
                                 </a>
                             </div>
                             <div class="col col-12 py-3">
@@ -111,10 +111,9 @@
                             <div class="footer-section f-section-1">
                                 <p>
                                     &copy;
-                                    {{ date('Y') }} All Rights Reserved.
+                                    {{ date('Y') }} All Rights Reserved.<br>
                                     <a href="http://acetrot.com" target="_blank">
-                                        Acetrot <img src="{{ url('/backend/assets/img/acetrot.png') }}" width="24"
-                                            alt="">
+                                      by Nityansh Company
                                     </a>
 
                                 </p>

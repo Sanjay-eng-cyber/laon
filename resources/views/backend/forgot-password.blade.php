@@ -29,7 +29,8 @@
                         <div class="row text-center">
                             <div class="col col-12">
                                 <a href="/">
-                                    <img src="{{ asset('frontend/images/hr-logo.png') }}" width="30%" class="" alt="logo">
+                                    <img src="{{ asset('frontend/images/hr-logo.png') }}" width="30%" class=""
+                                        alt="logo">
                                 </a>
                             </div>
                             <div class="col col-12 py-3">
@@ -37,7 +38,8 @@
 
                             </div>
                         </div>
-                        <p class="signup-link text-center">Enter your email address to receive a link to reset password!</p>
+                        <p class="signup-link text-center">Enter your email address to receive a link to reset password!
+                        </p>
                         <form class="text-left" method="POST" action="{{ route('password.email') }}">
                             @csrf
                             <div class="form">
@@ -46,18 +48,23 @@
                                         <circle cx="12" cy="12" r="4"></circle>
                                         <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
                                     </svg> --}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16" style="fill: #6c86f8">
-                                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"
+                                        style="fill: #6c86f8">
+                                        <path
+                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z">
+                                        </path>
                                     </svg>
                                     <span><i class="bi bi-envelope-fill"></i></span>
-                                    <input id="email" name="email" type="email" value="" placeholder="Email" minlength="8" maxlength="30" required>
-                                    @if($errors->has('email'))
-                                    <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
+                                    <input id="email" name="email" type="email" value=""
+                                        placeholder="Email" minlength="8" maxlength="30" required>
+                                    @if ($errors->has('email'))
+                                        <div class="text-danger" role="alert">{{ $errors->first('email') }}</div>
                                     @endif
                                     @if (session('status'))
-                                    <div class="text-success">
-                                        <li> {{ session('status') }} </li>
-                                    </div>
+                                        <div class="text-success">
+                                            <li> {{ session('status') }} </li>
+                                        </div>
                                     @endif
                                 </div>
                                 <div class="d-sm-flex justify-content-center">
@@ -72,16 +79,11 @@
                             <div class="footer-section f-section-1">
                                 <p>
                                     &copy;
-                                    {{ date('Y') }} All Rights Reserved.
-                                    <a href="http://acetrot.com" target="_blank">
-                                    Acetrot <img src="{{ url('/assets/img/acetrot.png') }}" width="24" alt="">
-                                    </a>
+                                    {{ date('Y') }} All Rights Reserved.By Nityansh Company.
 
                                 </p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>

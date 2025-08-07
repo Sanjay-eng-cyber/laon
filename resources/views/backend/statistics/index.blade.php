@@ -64,17 +64,17 @@
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing ">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Total Categories</h4>
+                                    <h4 class="text-center">Total Cities</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
                                         </div>
                                         <div class="">
-                                            <p class="w-value">4</p>
+                                            <p class="w-value">{{ $cities }}</p>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{ route('cms.cities.index') }}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -86,17 +86,17 @@
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing dashboard-card">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Total Offers</h4>
+                                    <h4 class="text-center">Total Services</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
                                         </div>
                                         <div class="">
-                                            <p class="w-value">10</p>
+                                            <p class="w-value">{{ $services }}</p>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{ route('cms.services.index') }}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -104,21 +104,20 @@
                             </div>
                         </div>
 
-
                         <div class="col-xl-4 col-md-6 col-sm-12 col-12 layout-spacing dashboard-card">
                             <div class="widget widget-one_hybrid widget-referral h-100 px-2 py-3">
                                 <div class="widget-heading p-0 m-0">
-                                    <h4 class="text-center">Total Exhibitions</h4>
+                                    <h4 class="text-center">Total Messages</h4>
                                     <div class="w-title justify-content-center align-items-center">
                                         <div class="w-icon">
                                             <i class="far fa-chart-bar big-font-icon"> </i>
                                         </div>
                                         <div class="">
-                                            <p class="w-value">45</p>
+                                            <p class="w-value">{{ $messages }}</p>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-outline-primary mx-auto">
+                                        <a href="{{ route('cms.chats') }}" class="btn btn-outline-primary mx-auto">
                                             <small><i class="far fa-edit"> </i></small> Manage
                                         </a>
                                     </div>
@@ -132,11 +131,11 @@
             </div>
         </div>
     </div>
-    @endsection
-    <style>
-        .widget {
-            padding: 20 px !important;
-        }
-    </style>
-    @section('js')
-    @endsection
+@endsection
+<style>
+    .widget {
+        padding: 20 px !important;
+    }
+</style>
+@section('js')
+@endsection

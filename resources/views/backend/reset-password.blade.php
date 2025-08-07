@@ -95,11 +95,7 @@
                             <div class="footer-section f-section-1">
                                 <p>
                                     &copy;
-                                    {{ date('Y') }} All Rights Reserved.
-                                    <a href="http://acetrot.com" target="_blank">
-                                        Acetrot <img src="{{ url('/assets/img/acetrot.png') }}" width="24"
-                                            alt="">
-                                    </a>
+                                    {{ date('Y') }} All Rights Reserved. by Nityansh Company.
 
                                 </p>
                             </div>

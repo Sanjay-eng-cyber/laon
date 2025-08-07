@@ -179,15 +179,6 @@
             }
         });
 
-        function openChatModal() {
-            @if (auth()->check())
-                document.getElementById("chatModal").style.display = "block";
-            @else
-                window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
-                return;
-            @endif
-        }
-
         function closeChatModal() {
             document.getElementById("chatModal").style.display = "none";
         }
@@ -232,19 +223,6 @@
                 })
                 .catch(error => {
                     console.error('Fetch Error:', error);
-                });
-
-            @php
-                $userId = auth()->guard('web')->check() ? auth()->guard('web')->user()->id : session('chat_user_id');
-            @endphp
-            const userId = "{{ $userId }}";
-            Echo.private(`chat.${userId}`)
-                .listen('AdminUserChatEvent', (e) => {
-                    const messageDiv = document.getElementById('messageDiv');
-                    messageDiv.innerHTML += `
-                <p class="admin-message">Admin: ${e.message}</p>
-            `;
-                    messageDiv.scrollTop = messageDiv.scrollHeight;
                 });
         });
     </script>
