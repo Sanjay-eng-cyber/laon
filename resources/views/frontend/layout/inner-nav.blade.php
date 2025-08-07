@@ -91,7 +91,8 @@
                                   {{-- <li><a href="product-single-sidebar.html">Product page side tab <span
                                               class="badge">New</span></a>
                                   </li> --}}
-                                  <li><a href="{{ route('services.index') }}" title="Loans" class="animsition-link">Loans</a>
+                                  <li><a href="{{ route('services.index') }}" title="Loans"
+                                          class="animsition-link">Loans</a>
                                   </li>
                                   <li><a href="#">Credit Cards</a>
                                   </li>
@@ -107,7 +108,7 @@
                                           class="animsition-link">Education Loan Single</a></li> --}}
                               </ul>
                           </li>
-                          <li><a href="{{route('blogs.index')}}" class="animsition-link">Blogs</a>
+                          <li><a href="{{ route('blogs.index') }}" class="animsition-link">Blogs</a>
                               {{-- <ul> --}}
                               {{-- <li><a href="blog-listing.html" title="Blog Listing" class="animsition-link">Blogs</a></li> --}}
                               {{-- <li><a href="blog-single.html" title="Blog Single" class="animsition-link">Blog
@@ -118,7 +119,7 @@
                                             class="animsition-link">Blog Three Column</a></li> --}}
                               {{-- </ul> --}}
                           </li>
-                          <li><a href="about.html" class="animsition-link">News</a>
+                          <li><a href="{{ route('news.index') }}" class="animsition-link">News</a>
                               {{-- <ul>
                                                 <li><a href="about.html" title="About us" class="animsition-link">About us</a></li>
                                                 <li><a href="team.html" title="Team" class="animsition-link">Team</a></li>

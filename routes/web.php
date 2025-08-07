@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\AuthController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\InquiryController;
+use App\Http\Controllers\frontend\NewsController;
 use App\Http\Controllers\frontend\ServiceController;
 use App\Http\Controllers\frontend\UserAdminChatController;
 
@@ -16,6 +17,9 @@ Route::domain(config('app.web_domain'))->group(
         Route::post('inquiry/store', [InquiryController::class, 'store'])->name('inquiry.store');
         Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');
         Route::get('blog/show/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+        Route::get('news', [NewsController::class, 'index'])->name('news.index');
+        Route::get('news/show/{slug}', [NewsController::class, 'show'])->name('news.show');
 
         Route::get('login', [AuthController::class, 'loginShow'])->name('login');
         Route::post('login/store', [AuthController::class, 'login'])->name('login.store');

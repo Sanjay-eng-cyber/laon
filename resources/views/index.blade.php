@@ -273,7 +273,7 @@
                 </div>
             </div>
         </div>
-        <div class="section-space80">
+        {{-- <div class="section-space80">
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
@@ -330,7 +330,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="section-space80 bg-primary">
             <div class="container">
                 <div class="row">
@@ -434,56 +434,30 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="post-block mb30">
-                                <div class="post-img">
-                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img.jpg"
-                                            alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
-                                </div>
-                                <div class="bg-white pinside40 outline">
-                                    <h2><a href="blog-single.html" class="title">Couples Buying New Home Loan</a></h2>
-                                    <p class="meta"><span class="meta-date">Aug 25, 2017</span><span
-                                            class="meta-author">By<a href="#"> Admin</a></span></p>
-                                    <p>Fusce sed erat libasellus id orci quis ligula pret do lectus velit, a malesuada urna
-                                        sodales eu.</p>
-                                    <a href="blog-single.html" class="btn-link">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="post-block mb30">
-                                <div class="post-img">
-                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img-1.jpg"
-                                            alt="Borrow - Loan Company Website Template" class="img-fluid"></a>
-                                </div>
-                                <div class="bg-white pinside40 outline">
-                                    <h2><a href="blog-single.html" class="title">Business Man Thinking for Loan</a></h2>
-                                    <p class="meta"><span class="meta-date">Aug 24, 2017</span><span
-                                            class="meta-author">By<a href="#"> Admin</a></span></p>
-                                    <p>Nulla vehicula nibh vel malesuada dapibus ringilla nunc mi sit amet fbendum
-                                        sapierttitor
-                                        nibh. </p>
-                                    <a href="blog-single.html" class="btn-link">Read More</a>
+                        @forelse ($news as $nw)
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="post-block mb30">
+                                    <div class="post-img">
+                                        <a href="{{ route('news.show', $nw->slug) }}" class="imghover"><img
+                                                src="{{ asset('storage/images/' . $nw->type . '/' . $nw->image) }}"
+                                                alt="Borrow - Loan Company Website Template" class="img-fluid"
+                                                style="height:200px; width:400px;"></a>
+                                    </div>
+                                    <div class="bg-white pinside40 outline">
+                                        <h2><a href="blog-single.html" class="title">{{ $nw->title }}</a>
+                                        </h2>
+                                        <p class="meta"><span
+                                                class="meta-date">{{ dd_format($nw->created_at, 'd M, Y') }}
+                                                <p>{!! str_limit($nw->body, 200) !!}</p>
+                                                <a href="{{ route('news.show', $nw->slug) }}" class="btn-link">Read
+                                                    More</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="post-block mb30">
-                                <div class="post-img">
-                                    <a href="blog-single.html" class="imghover"><img src="images/blog-img-2.jpg"
-                                            alt="Borrow - Loan Company Website Templates" class="img-fluid"></a>
-                                </div>
-                                <div class="bg-white pinside40 outline">
-                                    <h2><a href="blog-single.html" class="title">Are you students looking for loan ?</a>
-                                    </h2>
-                                    <p class="meta"><span class="meta-date">Aug 23, 2017</span><span
-                                            class="meta-author">By<a href="#"> Admin</a></span></p>
-                                    <p>Malesuada urna sodales euusce sed erat libasellus id orci quis ligula pretium co ctus
-                                        velit.</p>
-                                    <a href="blog-single.html" class="btn-link">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+
+                        @empty
+                            <div>No News Founds</div>
+                        @endforelse
                     </div>
                 </div>
             </div>

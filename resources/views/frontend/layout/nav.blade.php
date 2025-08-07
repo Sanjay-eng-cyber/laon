@@ -93,7 +93,7 @@
                                                class="animsition-link">Blog Three Column</a></li>
                                    </ul> --}}
                                </li>
-                               <li><a href="blog-listing.html" class="animsition-link">News</a>
+                               <li><a href="{{route('news.index')}}" class="animsition-link">News</a>
 
                                </li>
                                <li><a href="blog-listing.html" class="animsition-link">Contact US</a>
