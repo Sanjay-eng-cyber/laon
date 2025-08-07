@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\cms\PostController;
-use App\Http\Controllers\frontend\UserAdminChatController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\cms\PostController;
+use App\Http\Controllers\cms\InquiryController;
+use App\Http\Controllers\frontend\UserAdminChatController;
 
 
 Route::domain(config('app.cms_domain'))->group(function () {
@@ -53,5 +54,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
 
     Route::get('chats', [UserAdminChatController::class, 'index'])->name('cms.chats');
     Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('cms.chat.store');
+
+    Route::get('inquiry', [InquiryController::class, 'index'])->name('cms.inquiry.index');
+    Route::get('inquiry/{id}', [InquiryController::class, 'show'])->name('cms.inquiry.show');
   });
 });

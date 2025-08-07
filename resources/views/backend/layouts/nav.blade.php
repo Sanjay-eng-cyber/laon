@@ -156,49 +156,19 @@
                           </div>
                       </a>
                   </li>
-
-                  {{-- <li class="menu">
-                      <a href="{{ route('cms.exhibition.index') }}"
-                          aria-expanded="{{ route('cms.exhibition.index') == request()->url() ? 'true' : 'false' }}"
+                  <li class="menu">
+                      <a href="{{ route('cms.inquiry.index') }}"
+                          aria-expanded="{{ route('cms.inquiry.index') == request()->url() ? 'true' : 'false' }}"
                           class="dropdown-toggle">
                           <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" height="1em"
-                                  viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                   <path
-                                      d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h96 32H424c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z" />
+                                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 110c35.3 0 64 28.7 64 64 0 26.5-16.6 49.1-40 58.2V264c0 13.3-10.7 24-24 24s-24-10.7-24-24v-24c0-13.3 10.7-24 24-24 17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-35.3 28.7-64 64-64zm0 296c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z" />
                               </svg>
-                              <span>Exhibitions</span>
+                              <span>Inquiry</span>
                           </div>
                       </a>
-                  </li> --}}
-                  {{-- <li class="menu">
-                      <a href="{{ route('cms.data.index') }}"
-                          aria-expanded="{{ route('cms.data.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                  <path
-                                      d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z" />
-                              </svg>
-                              <span>Data</span>
-                          </div>
-                      </a>
-                  </li> --}}
-                  {{-- <li class="menu">
-                      <a href="{{ route('backend.user.index') }}"
-                          aria-expanded="{{ route('backend.user.index') == request()->url() ? 'true' : 'false' }}"
-                          class="dropdown-toggle">
-                          <div class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                  viewBox="0 0 24 24">
-                                  <path
-                                      d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                              </svg>
-                              <span>Users</span>
-                          </div>
-                      </a>
-                  </li> --}}
+                  </li>
                   <li class="menu">
                       <a href="" aria-expanded="true">
 

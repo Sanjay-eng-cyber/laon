@@ -10,4 +10,9 @@ class City extends Model
     {
         return $this->belongsToMany(Service::class, 'service_city');
     }
+
+    public function inquiries()
+    {
+        return $this->hasMany(Inquiry::class);
+    }
 }
