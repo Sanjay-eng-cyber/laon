@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Message;
 
 class ServiceController extends Controller
 {
@@ -24,7 +25,8 @@ class ServiceController extends Controller
             : null;
         // dd($city);
         $services = Service::where('type', 'loan')->get();
-
-        return view('frontend.loans.' . $service->slug, compact('service', 'city', 'services'));
+        $user = auth()->guard('web')->user();
+        $messages = $user ? Message::where("user_id", $user->id)->get() : [];
+        return view('frontend.loans.' . $service->slug, compact('service', 'city', 'services', 'messages'));
     }
 }

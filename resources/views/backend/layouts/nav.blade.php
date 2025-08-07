@@ -350,6 +350,20 @@
                           </div>
                       </a>
                   </li>
+                  <li class="menu">
+                      <a href="{{ route('cms.services.index') }}"
+                          aria-expanded="{{ route('cms.services.index') == request()->url() ? 'true' : 'false' }}"
+                          class="dropdown-toggle">
+                          <div class="">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                  <path
+                                      d="M502.3 190.8L327.4 338.6c-15.7 13.6-39.1 13.6-54.8 0L9.7 190.8C3.8 185.7 0 178.6 0 171.1V448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V171.1c0-7.5-3.8-14.6-9.7-20.3zM502.3 94.6c6.5-5.4 9.7-13.5 9.7-21.9V64c0-35.3-28.7-64-64-64H64C28.7 0 0 28.7 0 64v8.7c0 8.4 3.2 16.5 9.7 21.9l218.7 190.2c15.7 13.6 39.1 13.6 54.8 0L502.3 94.6z" />
+                              </svg>
+                              <span>Messages</span>
+                          </div>
+                      </a>
+                  </li>
+
                   {{-- <li class="menu">
                       <a href="{{ route('cms.exhibition.index') }}"
                           aria-expanded="{{ route('cms.exhibition.index') == request()->url() ? 'true' : 'false' }}"

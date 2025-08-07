@@ -128,6 +128,8 @@
     <script src="{{ asset('js/back-to-top.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backend/plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script src="{{ asset('js/echo.js') }}"></script>
     <script>
         @if (Session::get('alert-type') == 'success')
             @if (Session::has('message'))
@@ -175,5 +177,74 @@
             } else {
                 $(".navbar-fixed-top").removeClass("top-nav-collapse");
             }
+        });
+
+        function openChatModal() {
+            @if (auth()->check())
+                document.getElementById("chatModal").style.display = "block";
+            @else
+                window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
+                return;
+            @endif
+        }
+
+        function closeChatModal() {
+            document.getElementById("chatModal").style.display = "none";
+        }
+
+        // Optional: close modal when clicking outside of it
+        window.onclick = function(event) {
+            let modal = document.getElementById("chatModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.querySelector('#chatBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let message = document.getElementById('message').value;
+            let messageError = document.getElementById('mesaageError');
+            const csrfToken = '{{ csrf_token() }}';
+
+            fetch('/chat/store', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        message
+                    })
+                })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.success) {
+                        let msgBox = document.getElementById('messageDiv');
+                        let newMsg = document.getElementById('userMessagePara');
+                        newMsg.innerText = document.getElementById('message').value;
+                        msgBox.appendChild(newMsg);
+                        document.getElementById('message').value = '';
+                        msgBox.scrollTop = msgBox.scrollHeight; // auto-scroll to bottom
+                    } else {
+                        messageError.innerText = res.errors.message[0];
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch Error:', error);
+                });
+
+            @php
+                $userId = auth()->guard('web')->check() ? auth()->guard('web')->user()->id : session('chat_user_id');
+            @endphp
+            const userId = "{{ $userId }}";
+            Echo.private(`chat.${userId}`)
+                .listen('AdminUserChatEvent', (e) => {
+                    const messageDiv = document.getElementById('messageDiv');
+                    messageDiv.innerHTML += `
+                <p class="admin-message">Admin: ${e.message}</p>
+            `;
+                    messageDiv.scrollTop = messageDiv.scrollHeight;
+                });
         });
     </script>

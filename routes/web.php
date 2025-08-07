@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\frontend\BlogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\AuthController;
+use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\InquiryController;
 use App\Http\Controllers\frontend\ServiceController;
+use App\Http\Controllers\frontend\UserAdminChatController;
 
 Route::domain(config('app.web_domain'))->group(
     function () {
@@ -14,5 +16,15 @@ Route::domain(config('app.web_domain'))->group(
         Route::post('inquiry/store', [InquiryController::class, 'store'])->name('inquiry.store');
         Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');
         Route::get('blog/show/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+        Route::get('login', [AuthController::class, 'loginShow'])->name('login');
+        Route::post('login/store', [AuthController::class, 'login'])->name('login.store');
+        Route::get('sign-up', [AuthController::class, 'userRegisterShow'])->name('sign-up');
+        Route::post('sign-up/store', [AuthController::class, 'signUp'])->name('sign-up.store');
+
+        Route::group(['middleware' => 'auth:web'], function () {
+            Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');
+            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+        });
     }
 );
