@@ -15,7 +15,6 @@ class UserAdminChatController extends Controller
     public function index()
     {
         $users = User::get();
-        // $messages = [];
         return view('backend.chats.index', compact('users'));
     }
 

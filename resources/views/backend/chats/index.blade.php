@@ -7,7 +7,7 @@
         <div class="user-list">
             <div class="p-4 font-bold">Users</div>
             @foreach ($users as $chatUser)
-                <a href="{{ route('chat.index', ['user_id' => $chatUser->id]) }}"
+                <a href="{{ route('cms.chats', ['user_id' => $chatUser->id]) }}"
                     class="user {{ request('user_id') == $chatUser->id ? 'active' : '' }}">
                     {{ $chatUser->name ?? 'Guest ' . $chatUser->id }}
                 </a>
@@ -39,7 +39,7 @@
                         {{ $msg->message }}
                     </div>
                 @empty
-                    <p style="text-align:center; color: #888;">No messages yet</p>
+                    <p style="text-align:center; color: #888;" id="noMessage">No messages yet</p>
                 @endforelse
             </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\cms\PostController;
+use App\Http\Controllers\frontend\UserAdminChatController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,5 +50,8 @@ Route::domain(config('app.cms_domain'))->group(function () {
     Route::get('post/{service_id}/edit/{post_id}', [PostController::class, 'edit'])->name('cms.post.edit');
     Route::post('post/{service_id}/update/{post_id}', [PostController::class, 'update'])->name('cms.post.update');
     Route::get('post/{service_id}/delete/{post_id}', [PostController::class, 'delete'])->name('cms.post.delete');
+
+    Route::get('chats', [UserAdminChatController::class, 'index'])->name('cms.chats');
+    Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('cms.chat.store');
   });
 });

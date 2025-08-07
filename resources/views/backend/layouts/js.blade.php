@@ -85,7 +85,10 @@
             .then(res => {
                 if (res.success) {
                     const msgBox = document.querySelector('.chat-messages');
-
+                    const noMessage = document.getElementById('noMessage');
+                    if (noMessage) {
+                        noMessage.remove();
+                    }
                     // Create message div
                     const newMsg = document.createElement('div');
                     newMsg.classList.add('message');
@@ -97,6 +100,8 @@
 
                     // Clear input
                     document.getElementById('input_message').value = '';
+                    document.getElementById('noMessage').value = '';
+
                 }
             })
         // .catch(error => {
