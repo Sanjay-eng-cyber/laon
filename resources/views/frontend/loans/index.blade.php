@@ -1,5 +1,5 @@
  @extends('frontend.layout.app')
- @section('title', 'Loans')
+ @section('title', 'Services')
  @section('content')
      <div class="page-header">
          <div class="container">

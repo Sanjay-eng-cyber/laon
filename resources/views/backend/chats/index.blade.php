@@ -14,41 +14,44 @@
             @endforeach
         </div>
 
+        @php
+            $currentUser = $users->where('id', request('user_id'))->first();
+        @endphp
         <!-- Chat Messages -->
-        <div class="chat-box">
-            <div class="chat-header">
-                Chat with
-                @php
-                    $currentUser = $users->where('id', request('user_id'))->first();
-                @endphp
+        @if ($currentUser)
+            <div class="chat-box">
+                <div class="chat-header">
+                    Chat with
+                    @if ($currentUser)
+                        {{ $currentUser->name ?? 'User #' . $currentUser->id }}
+                        @php
+                            $messages = \App\Models\Message::where('user_id', $currentUser->id)->get();
+                        @endphp
+                    @else
+                        <span style="color:red;">Invalid or missing user</span>
+                        @php $messages = []; @endphp
+                    @endif
+                </div>
 
-                @if ($currentUser)
-                    {{ $currentUser->name ?? 'User #' . $currentUser->id }}
-                    @php
-                        $messages = \App\Models\Message::where('user_id', $currentUser->id)->get();
-                    @endphp
-                @else
-                    <span style="color:red;">Invalid or missing user</span>
-                    @php $messages = []; @endphp
-                @endif
-            </div>
+                <div class="chat-messages">
+                    @if ($messages->count())
+                        @foreach ($messages as $msg)
+                            <div class="message {{ $msg->sender_type == 'user' ? 'user-message' : 'admin-message' }}">
+                                {{ $msg->message }}
+                            </div>
+                        @endforeach
+                    @else
+                        <p style="text-align:center; color: #888;" id="noMessage">No messages yet</p>
+                    @endif
+                </div>
 
-            <div class="chat-messages">
-                @forelse ($messages as $msg)
-                    <div class="message {{ $msg->sender_type == 'user' ? 'user-message' : 'admin-message' }}">
-                        {{ $msg->message }}
-                    </div>
-                @empty
-                    <p style="text-align:center; color: #888;" id="noMessage">No messages yet</p>
-                @endforelse
-            </div>
-
-            <form class="chat-form">
-                @csrf
-                <input type="hidden" id="user_id" name="user_id" value="{{ request('user_id') }}">
-                <input type="text" id="input_message" name="message" placeholder="Type your message..." required>
-                <button type="submit" id="chatBtn">Send</button>
-            </form>
-        </div>
+                <form class="chat-form">
+                    @csrf
+                    <input type="hidden" id="user_id" name="user_id" value="{{ request('user_id') }}">
+                    <input type="text" id="input_message" name="message" placeholder="Type your message..." required>
+                    <button type="submit" id="chatBtn">Send</button>
+                </form>
+        @endif
+    </div>
     </div>
 @endsection

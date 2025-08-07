@@ -469,6 +469,40 @@
                   class="whatsapp-button" target="_blank">
                   <i class="fab fa-whatsapp"></i>
               </a>
+              <!-- Chat Button -->
+              <a href="javascript:void(0)" class="custom-chat-button" onclick="openChatModal()" title="Live Chat">
+                  💬
+              </a>
+
+              <!-- Chat Modal -->
+              <div id="chatModal" class="chat-modal">
+                  <div class="chat-modal-content">
+                      <span class="close" onclick="closeChatModal()">&times;</span>
+                      <h2>Chat With Admin</h2>
+                      <form id="chatForm">
+                          <div id="messageDiv" style="display: block;">
+                              @forelse ($messages as $msg)
+                                  @if ($msg->sender_type == 'user')
+                                      <p id="userMessagePara">
+                                          {{ $msg->message }} : You
+                                      </p>
+                                  @else
+                                      <p id="adminMessagePara">
+                                          Admin : {{ $msg->message }}
+                                      </p>
+                                  @endif
+                              @empty
+                                  <div>No Messages</div>
+                              @endforelse
+                          </div>
+                          <textarea id="message" name="message" rows="4" placeholder="Type your message..." required></textarea>
+                          <button type="submit" id="chatBtn">Send</button>
+                      </form>
+                      <div class="text-danger" id="messageError">
+
+                      </div>
+                  </div>
+              </div>
           </div>
       </div>
   @endsection
