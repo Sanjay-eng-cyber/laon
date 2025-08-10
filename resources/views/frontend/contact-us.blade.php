@@ -1,5 +1,5 @@
 @extends('frontend.layout.app')
-@section('title', 'Contact US')
+@section('title', 'Contact Us')
 @section('content')
     <div class="page-header">
         <div class="container">

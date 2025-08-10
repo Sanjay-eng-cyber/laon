@@ -71,7 +71,7 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">City
                                                     Name</label><br>
-                                                <p class="label-title">{{ $inquiry->service->name }}</p>
+                                                <p class="label-title">{{ $inquiry->city->name }}</p>
                                             </div>
                                         </div>
                                     </div>

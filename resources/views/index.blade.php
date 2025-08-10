@@ -164,7 +164,7 @@
                     <div class="section-title mb60 text-center">
                         <!-- section title start-->
                         <h1>Reasons to choose us</h1>
-                        <p>Nunc iaculis velit a vestibulum cursu estibentum nec ante eu molestie.</p>
+                        {{-- <p>Nunc iaculis velit a vestibulum cursu estibentum nec ante eu molestie.</p> --}}
                     </div>
                     <!-- /.section title start-->
                 </div>
@@ -175,8 +175,8 @@
                         <div class="feature-icon"> <i class="fa fa-calculator fa-2x"></i></div>
                         <div class="feature-content">
                             <h3 class="feature-title">EMI Calculator</h3>
-                            <p>Fusce sed erat libasellus id orciquise ctus velit, asimple male suada urna sodales eu.
-                            </p>
+                            {{-- <p>Fusce sed erat libasellus id orciquise ctus velit, asimple male suada urna sodales eu.
+                            </p> --}}
                         </div>
                     </div>
                 </div>
@@ -185,8 +185,8 @@
                         <div class="feature-icon"><i class="fa fa-heart fa-2x"></i></div>
                         <div class="feature-content">
                             <h3 class="feature-title">Customers love us!</h3>
-                            <p>Quisque ut ligula nec est pretium phareest male sunec felis atmetus mattis volutpat invel
-                                elit.</p>
+                            {{-- <p>Quisque ut ligula nec est pretium phareest male sunec felis atmetus mattis volutpat invel
+                                elit.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                         <div class="feature-icon"> <i class="fa fa-file-text-o fa-2x"></i></div>
                         <div class="feature-content">
                             <h3 class="feature-title">Easy Documentation </h3>
-                            <p>Vestibulum elementum pellent esques ittnunc dui in massa variusare augue feugiat.</p>
+                            {{-- <p>Vestibulum elementum pellent esques ittnunc dui in massa variusare augue feugiat.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                         <div class="feature-icon"><i class="fa fa-flash fa-2x"></i></div>
                         <div class="feature-content">
                             <h3 class="feature-title">Fast Approval</h3>
-                            <p>Pellent esques ittnunc vene nata uri bulum eleme ntum in massa varnare augue feugiat.</p>
+                            {{-- <p>Pellent esques ittnunc vene nata uri bulum eleme ntum in massa varnare augue feugiat.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -230,7 +230,7 @@
                         <div class="how-it-content">
                             <h2>Complete the form</h2>
                             <p>First we need to knowa little about you and your needs for loan.</p>
-                            <a href="#" class="btn btn-default btn-sm">Apply Now</a>
+                            <a href="{{ route('contact-us') }}" class="btn btn-default btn-sm">Apply Now</a>
                         </div>
                     </div>
                 </div>
