@@ -97,6 +97,7 @@
     <script src="{{ asset('js/back-to-top.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backend/plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?&amp;callback=initMap" async defer></script>
     <script>
         @if (Session::get('alert-type') == 'success')
             @if (Session::has('message'))

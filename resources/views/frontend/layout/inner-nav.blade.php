@@ -41,7 +41,7 @@
                           </li>
                           <li><a href="{{ route('news.index') }}" class="animsition-link">News</a>
                           </li>
-                          <li><a href="about.html" class="animsition-link">Contact Us</a>
+                          <li><a href="{{ route('contact-us') }}" class="animsition-link">Contact Us</a>
                           </li>
                           @auth
                               <li><a href="{{ route('frontend.logout') }}" class="animsition-link">Logout</a>

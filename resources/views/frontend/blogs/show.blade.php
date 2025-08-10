@@ -31,10 +31,10 @@
                     <div class="sub-nav" id="sub-nav">
                         <ul class="nav nav-justified">
                             <li class="nav-item">
-                                <a href="contact-us.html" class="nav-link">Give me call back</a>
+                                <a href="{{ route('contact-us') }}" class="nav-link">Give me call back</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('loan-calculator')}}" class="nav-link">Emi Caculator</a>
+                                <a href="{{ route('loan-calculator') }}" class="nav-link">Emi Caculator</a>
                             </li>
                         </ul>
                     </div>

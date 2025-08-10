@@ -8,6 +8,7 @@ use App\Http\Controllers\frontend\LoanCalculator;
 use App\Http\Controllers\frontend\NewsController;
 use App\Http\Controllers\frontend\InquiryController;
 use App\Http\Controllers\frontend\ServiceController;
+use App\Http\Controllers\frontend\ContactUsController;
 use App\Http\Controllers\frontend\UserAdminChatController;
 
 Route::domain(config('app.web_domain'))->group(
@@ -28,6 +29,8 @@ Route::domain(config('app.web_domain'))->group(
         Route::post('sign-up/store', [AuthController::class, 'signUp'])->name('sign-up.store');
 
         Route::get('loan-calculator', [LoanCalculator::class, 'index'])->name('loan-calculator');
+
+        Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 
         Route::group(['middleware' => 'auth:web'], function () {
             Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');

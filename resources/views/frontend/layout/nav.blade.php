@@ -26,7 +26,7 @@
                                <li><a href="{{ route('news.index') }}" class="animsition-link">News</a>
 
                                </li>
-                               <li><a href="blog-listing.html" class="animsition-link">Contact US</a>
+                               <li><a href="{{ route('contact-us') }}" class="animsition-link">Contact US</a>
 
                                </li>
                                @auth
