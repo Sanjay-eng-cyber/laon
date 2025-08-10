@@ -5,7 +5,7 @@
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="{{ asset('css/fontello.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/simple-slider.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/simple-slider.css')}}">
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CMerriweather:300,300i,400,400i,700,700i"
@@ -16,6 +16,8 @@
     <link href="{{ asset('backend/plugins/select2/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet"
         type="text/css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

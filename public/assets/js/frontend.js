@@ -23,14 +23,14 @@ document.querySelector('#chatBtn').addEventListener('click', function (e) {
     e.preventDefault();
 
     let message = document.getElementById('message').value;
-    let messageError = document.getElementById('mesaageError');
-    const csrfToken = '{{ csrf_token() }}';
+    // let messageError = document.getElementById('mesaageError');
+    // const csrfToken = '{{ csrf_token() }}';
 
     fetch('/chat/store', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': csrfToken
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         body: JSON.stringify({
             message
@@ -46,7 +46,7 @@ document.querySelector('#chatBtn').addEventListener('click', function (e) {
                 document.getElementById('message').value = '';
                 msgBox.scrollTop = msgBox.scrollHeight; // auto-scroll to bottom
             } else {
-                messageError.innerText = res.errors.message[0];
+                // messageError.innerText = res.errors.message[0];
             }
         })
         .catch(error => {

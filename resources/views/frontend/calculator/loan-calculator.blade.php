@@ -10,7 +10,7 @@
             <div class="emi-form">
                 <form id="loanForm">
                     <label>Loan Amount (₹)</label>
-                    <input type="number" id="amount" value="500000" required>
+                    <input type="number" id="amount" value="500000" step="1000" required>
 
                     <label>Interest Rate (%)</label>
                     <input type="number" id="rate" value="8.5" step="0.1" required>

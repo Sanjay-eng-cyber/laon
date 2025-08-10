@@ -31,7 +31,7 @@ Route::domain(config('app.web_domain'))->group(
 
         Route::group(['middleware' => 'auth:web'], function () {
             Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');
-            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+            Route::get('logout', [AuthController::class, 'logout'])->name('frontend.logout');
         });
     }
 );
