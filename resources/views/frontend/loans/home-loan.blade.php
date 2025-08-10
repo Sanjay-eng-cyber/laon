@@ -66,7 +66,7 @@
                           <div class="section-scroll pinside60" id="section-about">
                               <h1>About Home Loan</h1>
                               <i> “Helping you get your dream house.”</i>
-                              <p class="lead mt-2">A home loan is a financial product that allows you to borrow money from a
+                              <p class="mt-2">A home loan is a financial product that allows you to borrow money from a
                                   bank or other
                                   financial institution to purchase a property. Home loans are usually repaid for years, and
                                   the interest rate is generally fixed. Home loans can be used to buy both new and existing
@@ -512,6 +512,11 @@
   <!-- /.content end -->
   @section('js')
       <script>
+          window.authCheck = {{ auth()->guard('web')->check() ? 'true' : 'false' }};
+          window.loginUrl = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
+      </script>
+      <script src="{{ asset('assets/js/frontend.js') }}"></script>
+      <script>
           $(document).ready(function() {
               $('#service_id').select2({
                   placeholder: "Select Loan",
@@ -522,14 +527,5 @@
                   width: '100%'
               });
           });
-
-          function openChatModal() {
-              @if (auth()->check())
-                  document.getElementById("chatModal").style.display = "block";
-              @else
-                  window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
-                  return;
-              @endif
-          }
       </script>
   @endsection

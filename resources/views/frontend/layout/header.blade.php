@@ -2,9 +2,10 @@
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="{{ asset('css/fontello.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/simple-slider.css">
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CMerriweather:300,300i,400,400i,700,700i"

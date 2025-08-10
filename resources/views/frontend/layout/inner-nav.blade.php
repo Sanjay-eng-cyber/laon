@@ -26,7 +26,7 @@
               <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12 col-12 text-right">
                   <div class="top-nav"> <span class="top-text"><a href="#">View Locations</a> </span> <span
                           class="top-text"><a href="#">+1800-123-4567</a></span> <span class="top-text"><a
-                              href="#">EMI calculator</a></span> </div>
+                              href="{{route('loan-calculator')}}">EMI calculator</a></span> </div>
               </div>
           </div>
       </div>

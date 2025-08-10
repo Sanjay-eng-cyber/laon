@@ -34,7 +34,7 @@
                                  <a href="contact-us.html" class="nav-link">Give me call back</a>
                              </li>
                              <li class="nav-item">
-                                 <a href="#" class="nav-link">Emi Caculator</a>
+                                 <a href="{{route('loan-calculator')}}" class="nav-link">Emi Caculator</a>
                              </li>
                          </ul>
                      </div>

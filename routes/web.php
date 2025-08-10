@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\AuthController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\HomeController;
-use App\Http\Controllers\frontend\InquiryController;
+use App\Http\Controllers\frontend\LoanCalculator;
 use App\Http\Controllers\frontend\NewsController;
+use App\Http\Controllers\frontend\InquiryController;
 use App\Http\Controllers\frontend\ServiceController;
 use App\Http\Controllers\frontend\UserAdminChatController;
 
@@ -25,6 +26,8 @@ Route::domain(config('app.web_domain'))->group(
         Route::post('login/store', [AuthController::class, 'login'])->name('login.store');
         Route::get('sign-up', [AuthController::class, 'userRegisterShow'])->name('sign-up');
         Route::post('sign-up/store', [AuthController::class, 'signUp'])->name('sign-up.store');
+
+        Route::get('loan-calculator', [LoanCalculator::class, 'index'])->name('loan-calculator');
 
         Route::group(['middleware' => 'auth:web'], function () {
             Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');

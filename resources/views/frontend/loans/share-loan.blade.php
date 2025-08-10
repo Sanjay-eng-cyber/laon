@@ -675,14 +675,9 @@
   @endsection
   @section('js')
       <script>
-          function openChatModal() {
-              @if (auth()->check())
-                  document.getElementById("chatModal").style.display = "block";
-              @else
-                  window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
-                  return;
-              @endif
-          }
+          window.authCheck = {{ auth()->guard('web')->check() ? 'true' : 'false' }};
+          window.loginUrl = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
       </script>
+      <script src="{{ asset('assets/js/frontend.js') }}"></script>
   @endsection
   <!-- /.content end -->

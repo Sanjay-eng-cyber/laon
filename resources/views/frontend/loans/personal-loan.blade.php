@@ -507,6 +507,11 @@
   @endsection
   @section('js')
       <script>
+          window.authCheck = {{ auth()->guard('web')->check() ? 'true' : 'false' }};
+          window.loginUrl = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
+      </script>
+      <script src="{{ asset('assets/js/frontend.js') }}"></script>
+      <script>
           $(document).ready(function() {
               $('#loan_type').select2({
                   placeholder: "Select Loan",
@@ -517,15 +522,6 @@
                   width: '100%'
               });
           });
-
-          function openChatModal() {
-              @if (auth()->check())
-                  document.getElementById("chatModal").style.display = "block";
-              @else
-                  window.location.href = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
-                  return;
-              @endif
-          }
       </script>
   @endsection
   <!-- /.content end -->

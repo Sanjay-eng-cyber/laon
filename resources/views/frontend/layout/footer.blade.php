@@ -92,6 +92,7 @@
     <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/slider-carousel.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/service-carousel.js') }}"></script>
+    <script type="text/javascript" src="js/simple-slider.js"></script>
     <!-- Back to top script -->
     <script src="{{ asset('js/back-to-top.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backend/plugins/select2/select2.min.js') }}"></script>
@@ -135,7 +136,7 @@
             @endif
         @endif
     </script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         //jQuery to collapse the navbar on scroll
         $(window).scroll(function() {
             if ($(".header-transparent").offset().top > 50) {
@@ -144,51 +145,4 @@
                 $(".navbar-fixed-top").removeClass("top-nav-collapse");
             }
         });
-
-        function closeChatModal() {
-            document.getElementById("chatModal").style.display = "none";
-        }
-
-        // Optional: close modal when clicking outside of it
-        window.onclick = function(event) {
-            let modal = document.getElementById("chatModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        document.querySelector('#chatBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-
-            let message = document.getElementById('message').value;
-            let messageError = document.getElementById('mesaageError');
-            const csrfToken = '{{ csrf_token() }}';
-
-            fetch('/chat/store', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken
-                    },
-                    body: JSON.stringify({
-                        message
-                    })
-                })
-                .then(res => res.json())
-                .then(res => {
-                    if (res.success) {
-                        let msgBox = document.getElementById('messageDiv');
-                        let newMsg = document.getElementById('userMessagePara');
-                        newMsg.innerText = document.getElementById('message').value;
-                        msgBox.appendChild(newMsg);
-                        document.getElementById('message').value = '';
-                        msgBox.scrollTop = msgBox.scrollHeight; // auto-scroll to bottom
-                    } else {
-                        messageError.innerText = res.errors.message[0];
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch Error:', error);
-                });
-        });
-    </script>
+    </script> --}}
