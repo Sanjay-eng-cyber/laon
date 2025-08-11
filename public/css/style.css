@@ -3067,7 +3067,13 @@ Service-img
   width: 350px;
 }
 
-.service-content {}
+.service-content {
+  height: 300px;
+}
+
+.service-content>a {
+  margin-bottom: 0px;
+}
 
 .service-content>h2 {
   margin-bottom: 0px;
@@ -3386,7 +3392,9 @@ Blog
   padding-bottom: 19px;
 }
 
-.post-block {}
+.post-block {
+  height: auto;
+}
 
 .post-img {}
 

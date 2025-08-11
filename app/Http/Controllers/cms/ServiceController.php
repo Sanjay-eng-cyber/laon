@@ -41,7 +41,7 @@ class ServiceController extends Controller
             'city_id.*' => ['required', Rule::in($cities)],
             'short_desc' => 'required|string|max:30000|min:3',
             'image' => 'nullable|mimes:jpeg,png,jpg|max:1024',
-            'type' => 'required|string|min:3|max:20',
+            'type' => 'required|string|in:loan,credit_card',
             'rate_of_interest' => 'nullable|numeric|between:3,20',
         ]);
 
@@ -92,7 +92,7 @@ class ServiceController extends Controller
             'city_id.*' => ['required', Rule::in($cities)],
             'short_desc' => 'required|string|max:30000|min:3',
             'image' => 'nullable|mimes:jpeg,png,jpg|max:1024',
-            'type' => 'required|string|min:3|max:20',
+            'type' => 'required|string|in:loan,credit_card',
             'rate_of_interest' => 'nullable|numeric|between:3,20',
         ]);
 
@@ -109,7 +109,7 @@ class ServiceController extends Controller
         $service->name = $request->name;
         $service->slug = Str::slug($request->name);
         $service->short_desc = $request->short_desc;
-        $service->rate_of_interest = $request->rate_of_interest;
+        $service->rate_of_interest =  $request->type == 'loan' ? $request->rate_of_interest : null;
         $service->type = $request->type;
         if ($service->save()) {
             $service->cities()->sync($request->city_id);

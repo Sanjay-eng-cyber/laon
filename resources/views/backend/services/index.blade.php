@@ -77,10 +77,10 @@
                                                 {{ $service->name }}
                                             </td>
                                             <td>
-                                                {{ $service->type }}
+                                                {{ ucwords(str_replace('_', ' ', $service->type)) }}
                                             </td>
                                             <td>
-                                                {{ $service->rate_of_interest }}
+                                                {{ $service->rate_of_interest ?? '-----' }}
                                             </td>
                                             <td class="text-center">
                                                 <div class="dropdown custom-dropdown">

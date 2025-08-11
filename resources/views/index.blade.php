@@ -108,7 +108,7 @@
             <div class="row">
                 @forelse ($services as $ser)
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="service-img-box mb30 text-center outline h-100">
+                        <div class="service-img-box mb30 text-center outline h-150">
                             <div class="service-img">
                                 <a href="{{ route('services.show', $ser->slug) }}" class="imghover"><img
                                         src="{{ asset('storage/images/services/' . $ser->image) }}" alt="service"

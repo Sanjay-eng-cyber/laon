@@ -60,16 +60,20 @@
                                 </div>
                                 <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
                                     <label for="formGroupExampleInput" class="">Type</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Enter Type" minlength="3" maxlength="20" required name="type"
-                                        value="{{ old('type') }}">
+                                    <select name="type" id="type" class="form-control" required>
+                                        <option value="">Select Any</option>
+                                        <option value="loan" {{ old('type') == 'loan' ? 'selected' : '' }}>Loan
+                                        </option>
+                                        <option value="credit_card" {{ old('type') == 'credit_card' ? 'selected' : '' }}>
+                                            Credit Card</option>
+                                    </select>
                                     @if ($errors->has('type'))
                                         <div class="text-danger" role="alert">{{ $errors->first('type') }}</div>
                                     @endif
                                 </div>
-                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2">
-                                    <label for="formGroupExampleInput" class="">Rate Of Interest</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                <div class="col-xl-6 col-md-6 col-sm-12 mt-2" id="rate_of_interest">
+                                    <label for="rateOfInterestInput" class="">Rate Of Interest</label>
+                                    <input type="text" class="form-control" id="rateOfInterestInput"
                                         placeholder="Enter rate of interest" required name="rate_of_interest"
                                         value="{{ old('rate_of_interest') }}">
                                     @if ($errors->has('rate_of_interest'))
@@ -133,5 +137,17 @@
                 width: '100%'
             });
         });
+
+        let type = document.getElementById('type');
+        let rateOfInterest = document.getElementById('rate_of_interest');
+        let rateOfInterestInput = document.getElementById('rateOfInterestInput');
+        type.addEventListener('change', function() {
+            if (type.value === 'credit_card') {
+                rateOfInterest.style.display = 'none';
+                rateOfInterestInput.removeAttribute('required');
+            } else {
+                rateOfInterest.style.display = 'block';
+            }
+        })
     </script>
 @endsection

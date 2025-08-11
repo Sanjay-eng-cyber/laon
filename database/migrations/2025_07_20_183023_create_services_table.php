@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('short_desc')->nullable();
-            $table->string('type')->nullable();
+            $table->enum('type', ['loan', 'credit_card'])->nullable();
             $table->decimal('rate_of_interest', 5, 2)->nullable();
             $table->timestamps();
         });

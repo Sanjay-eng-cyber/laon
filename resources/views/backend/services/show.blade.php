@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Service - ' . ucwords($service->name))
+@section('title', 'Service | ' . ucwords($service->name))
 @section('content')
     <div class="layout-px-spacing row layout-top-spacing m-0">
         <div id="tableDropdown" class="col-lg-12 col-12 layout-spacing">
@@ -47,9 +47,10 @@
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title"
                                                     class="label-title">type</label><br>
-                                                <p class="label-title">{{ $service->type }}</p>
+                                                <p class="label-title">{{ ucwords(str_replace('_', ' ', $service->type)) }}
+                                                </p>
                                             </div>
-                                        </div>  
+                                        </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="degree3" class="cust-title" class="label-title">Rate Of

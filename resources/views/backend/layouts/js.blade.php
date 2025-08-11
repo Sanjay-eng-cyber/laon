@@ -21,6 +21,7 @@
 
 {{-- <script src="{{asset('assets/js/components/notification/custom-snackbar.js')}}"></script> --}}
 <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
+<script src="{{ asset('assets/node_modules/tinymce/tinymce.min.js') }}"></script>
 <script>
     @if (Session::get('alert-type') == 'success')
         @if (Session::has('message'))
@@ -61,51 +62,3 @@
     @endif
 </script>
 
-<script src="{{ asset('assets/node_modules/tinymce/tinymce.min.js') }}"></script>
-<script>
-    document.querySelector('#chatBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        let message = document.getElementById('input_message').value;
-        let user_id = document.getElementById('user_id').value;
-        // console.log(inputMessage);
-        const csrfToken = '{{ csrf_token() }}';
-
-        fetch('/chat/store', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({
-                    message,
-                    user_id
-                })
-            })
-            .then(res => res.json())
-            .then(res => {
-                if (res.success) {
-                    const msgBox = document.querySelector('.chat-messages');
-                    const noMessage = document.getElementById('noMessage');
-                    if (noMessage) {
-                        noMessage.remove();
-                    }
-                    // Create message div
-                    const newMsg = document.createElement('div');
-                    newMsg.classList.add('message');
-                    newMsg.classList.add(res.mess.sender_type === 'user' ? 'user-message' :
-                        'admin-message');
-                    newMsg.innerText = res.mess;
-
-                    msgBox.appendChild(newMsg);
-
-                    // Clear input
-                    document.getElementById('input_message').value = '';
-                    document.getElementById('noMessage').value = '';
-
-                }
-            })
-        // .catch(error => {
-        //     console.error('Fetch Error:', error);
-        // });
-    });
-</script>
