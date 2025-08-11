@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\AuthController;
 use App\Http\Controllers\frontend\BlogController;
@@ -34,6 +35,7 @@ Route::domain(config('app.web_domain'))->group(
         Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 
         Route::get('teams', [TeamController::class, 'index'])->name('team.index');
+        Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
 
         Route::group(['middleware' => 'auth:web'], function () {
             Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');

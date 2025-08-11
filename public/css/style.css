@@ -145,7 +145,7 @@ strong {
   /* color: rgb(245, 245, 249) !important; */
   display: inline-block;
   margin: 5px 10px 10px 0;
-  background-color: black;
+  background-color: #15549a;
   min-width: 10%;
   padding: 1%;
   text-align: center;
@@ -158,11 +158,11 @@ strong {
 }
 
 #service_cities strong a {
-  color: gold;
+  color: white;
 }
 
 #service_cities strong a:hover {
-  color: rgb(235, 71, 11);
+  color: #f51f8a;
 }
 
 blockquote {

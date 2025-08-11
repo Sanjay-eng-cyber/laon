@@ -2,7 +2,7 @@
         <!-- footer -->
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="widget-text mt40">
                         <!-- widget text -->
                         <p>Our goal at Borrow Loan Company is to provide access to personal loans and education loan,
@@ -26,13 +26,12 @@
                     <div class="widget-footer mt40">
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Blogs</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Faq</a></li>
+                            <li><a href="{{route('dashboard')}}">Home</a></li>
+                            <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+                            <li><a href="{{route('news.index')}}">News</a></li>
+                            <li><a href="{{route('about-us.index')}}">About Us</a></li>
+                            <li><a href="{{route('team.index')}}">Team</a></li>
+                            <li><a href="{{route('contact-us')}}">Contact Us</a></li>
                         </ul>
                     </div>
                     <!-- /.widget footer -->
@@ -49,7 +48,7 @@
                     </div>
                     <!-- /.widget footer -->
                 </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+                {{-- <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
                     <div class="widget-social mt40">
                         <!-- widget footer -->
                         <ul class="listnone">
@@ -60,7 +59,7 @@
                         </ul>
                     </div>
                     <!-- /.widget footer -->
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
