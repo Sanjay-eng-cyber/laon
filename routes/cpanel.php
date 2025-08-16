@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cms\PostController;
 use App\Http\Controllers\cms\InquiryController;
-use App\Http\Controllers\frontend\UserAdminChatController;
+use App\Http\Controllers\cms\UserAdminChatController;
 
 
 Route::domain(config('app.cms_domain'))->group(function () {
@@ -52,10 +52,12 @@ Route::domain(config('app.cms_domain'))->group(function () {
     Route::post('post/{service_id}/update/{post_id}', [PostController::class, 'update'])->name('cms.post.update');
     Route::get('post/{service_id}/delete/{post_id}', [PostController::class, 'delete'])->name('cms.post.delete');
 
-    Route::get('chats', [UserAdminChatController::class, 'index'])->name('cms.chats');
-    Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('cms.chat.store');
-
+    
     Route::get('inquiry', [InquiryController::class, 'index'])->name('cms.inquiry.index');
     Route::get('inquiry/{id}', [InquiryController::class, 'show'])->name('cms.inquiry.show');
+    
+    Route::get('/chat/fetch/{partner_id}/{partner_type}', [UserAdminChatController::class, 'fetch']);
+    Route::post('/chat/send/{fromType}', [UserAdminChatController::class, 'send']);
+    Route::get('chats', [UserAdminChatController::class, 'index'])->name('cms.chats');
   });
 });

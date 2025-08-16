@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('admin_id')->nullable()->constrained()->onDelete('cascade');
-            $table->enum('sender_type', ['user', 'admin']);
+            $table->unsignedBigInteger('sender_id');
+            $table->string('sender_type'); // 'user' or 'admin'
+            $table->unsignedBigInteger('receiver_id');
+            $table->string('receiver_type'); // 'user' or 'admin'
             $table->text('message');
             $table->timestamps();
         });

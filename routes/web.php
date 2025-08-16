@@ -40,6 +40,9 @@ Route::domain(config('app.web_domain'))->group(
         Route::group(['middleware' => 'auth:web'], function () {
             Route::post('chat/store', [UserAdminChatController::class, 'messageSend'])->name('chat.store');
             Route::get('logout', [AuthController::class, 'logout'])->name('frontend.logout');
+
+            Route::get('/chat/fetch/{partnerId}/{partnerType}', [UserAdminChatController::class, 'fetch']);
+            Route::post('/chat/send/{fromType}', [UserAdminChatController::class, 'send']);
         });
     }
 );

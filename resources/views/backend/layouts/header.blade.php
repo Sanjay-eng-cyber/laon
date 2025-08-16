@@ -30,3 +30,4 @@
 <link href="{{ asset('plugins/lightgallery/css/lightgallery.min.css') }}" rel="stylesheet" />
 
 <link rel="stylesheet" href="{{ asset('backend/css/cms.css') }}">
+<meta name="csrf-token" content="{{ csrf_token() }}">

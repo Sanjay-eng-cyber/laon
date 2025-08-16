@@ -26,7 +26,7 @@ class ServiceController extends Controller
         // dd($city);
         $services = Service::where('type', 'loan')->get();
         $user = auth()->guard('web')->user();
-        $messages = $user ? Message::where("user_id", $user->id)->get() : [];
-        return view('frontend.loans.' . $service->slug, compact('service', 'city', 'services', 'messages'));
+        // $messages = $user ? Message::where("user_id", $user->id)->get() : [];
+        return view('frontend.loans.' . $service->slug, compact('service', 'city', 'services'));
     }
 }
