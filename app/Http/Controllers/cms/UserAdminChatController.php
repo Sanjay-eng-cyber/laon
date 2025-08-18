@@ -5,13 +5,15 @@ namespace App\Http\Controllers\cms;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserAdminChatController extends Controller
 {
     public function index()
     {
-        return view('backend.chats.index');
+        $users = User::latest()->paginate(10);
+        return view('backend.chats.index', compact('users'));
     }
     public function fetch($partnerId, $partnerType)
     {

@@ -4924,8 +4924,8 @@ Landing Page Template
   display: none;
   position: fixed;
   z-index: 10000;
-  right: 500px;
-  bottom: 50px;
+  right: 35%;
+  bottom: 5%;
   width: 500px;
   height: 600px;
   background-color: #fff;
@@ -4933,6 +4933,7 @@ Landing Page Template
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
+
 }
 
 .chat-modal-content {
@@ -5224,7 +5225,6 @@ canvas {
 
     padding: 16px 46px;
   }
-
 }
 
 /*============= media query max-width: 768px; =============*/
@@ -5498,7 +5498,26 @@ canvas {
   #service_cities strong a:active {
     color: rgb(235, 71, 11);
   }
+
+  .chat-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    right: 20%;
+    top: 2%;
+    /* bottom: 20%; */
+    width: 60%;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+
+  }
+
 }
+
 
 @media only screen and (max-width:460px) {
 

@@ -481,29 +481,14 @@
               <div id="chatModal" class="chat-modal">
                   <div class="chat-modal-content">
                       <span class="close" onclick="closeChatModal()">&times;</span>
-                      <h2>Chat With Admin</h2>
-                      <form id="chatForm">
-                          <div id="messageDiv" style="display: block;">
-                              @forelse ($messages as $msg)
-                                  @if ($msg->sender_type == 'user')
-                                      <p id="userMessagePara">
-                                          {{ $msg->message }} : You
-                                      </p>
-                                  @else
-                                      <p id="adminMessagePara">
-                                          Admin : {{ $msg->message }}
-                                      </p>
-                                  @endif
-                              @empty
-                                  <div>No Messages</div>
-                              @endforelse
-                          </div>
-                          <textarea id="message" name="message" rows="4" placeholder="Type your message..." required></textarea>
-                          <button type="submit" id="chatBtn">Send</button>
-                      </form>
-                      <div class="text-danger" id="messageError">
+                      <h3>Chat With Admin</h3>
+                      <div class="chat-box" id="chat-box"></div>
 
+                      <div class="chat-input">
+                          <input type="text" id="message" placeholder="Type a message..." style="flex:1;">
+                          <button id="sendBtn">Send</button>
                       </div>
+
                   </div>
               </div>
           </div>
@@ -511,14 +496,21 @@
   @endsection
   <!-- /.content end -->
   @section('js')
+      <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
       <script>
           window.authCheck = {{ auth()->guard('web')->check() ? 'true' : 'false' }};
           window.loginUrl = "{{ route('login', ['serviceSlug' => $service->slug]) }}";
+          window.ChatConfig = {
+              myId: {{ Auth::guard('web')->check() ? Auth::guard('web')->id() : Auth::guard('admin')->id() }},
+              myType: "{{ Auth::guard('web')->check() ? 'user' : 'admin' }}",
+              partnerId: 1,
+              partnerType: "admin"
+          };
       </script>
       <script src="{{ asset('assets/js/frontend.js') }}"></script>
       <script>
           $(document).ready(function() {
-              $('#service_id').select2({
+              $('#loan_type').select2({
                   placeholder: "Select Loan",
                   width: '100%'
               });
