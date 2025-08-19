@@ -481,8 +481,8 @@
                       <div class="chat-box" id="chat-box"></div>
 
                       <div class="chat-input">
-                          <input type="text" id="message" placeholder="Type a message..." style="flex:1;">
-                          <button id="sendBtn">Send</button>
+                          <input type="text" id="message" class="message" placeholder="Type a message..." style="flex:1;">
+                          <button id="sendBtn" class="sendBtn">Send</button>
                       </div>
 
                   </div>
