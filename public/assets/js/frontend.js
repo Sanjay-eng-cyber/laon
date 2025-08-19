@@ -64,7 +64,6 @@ function sendMessage() {
 
         });
 }
-loadMessages();
 
 
 function appendMessage(msg, isYou) {
@@ -79,10 +78,11 @@ function loadMessages() {
     fetch(`/chat/fetch/${partnerId}/${partnerType}`)
         .then(res => res.json())
         .then(messages => {
-            // console.log(messages.mess)
+            console.log(messages.mess)
             chatBox.innerHTML = '';
             messages.mess.forEach(msg => {
                 appendMessage(msg, msg.sender_id == myId && msg.sender_type == myType);
             });
         });
 }
+loadMessages();

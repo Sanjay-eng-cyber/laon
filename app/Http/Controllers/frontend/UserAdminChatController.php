@@ -14,8 +14,8 @@ class UserAdminChatController extends Controller
 {
     public function fetch($partnerId, $partnerType)
     {
-        $myType = Auth::guard('admin')->check() ? 'admin' : 'user';
-        $myId = Auth::guard('admin')->check() ? Auth::guard('admin')->id() : Auth::guard('web')->id();
+        $myType = Auth::guard('web')->check() ? 'user' : 'admin';
+        $myId = Auth::guard('web')->check() ? Auth::guard('web')->id() : Auth::guard('admin')->id();
 
         $messages = Message::where(function ($q) use ($myId, $myType, $partnerId, $partnerType) {
             $q->where('sender_id', $myId)
@@ -31,7 +31,7 @@ class UserAdminChatController extends Controller
             })
             ->orderBy('id')
             ->get();
-
+        // dd($partnerId);
         return response()->json([
             'success' => true,
             'mess' => $messages

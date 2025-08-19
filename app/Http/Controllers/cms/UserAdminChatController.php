@@ -17,8 +17,6 @@ class UserAdminChatController extends Controller
     }
     public function fetch($partnerId, $partnerType)
     {
-        // $myId = auth()->id();
-        // $myType = auth()->user() instanceof \App\Models\Admin ? 'admin' : 'user';
         $myType = Auth::guard('admin')->check() ? 'admin' : 'user';
         $myId = Auth::guard('admin')->check() ? Auth::guard('admin')->id() : Auth::guard('web')->id();
 
