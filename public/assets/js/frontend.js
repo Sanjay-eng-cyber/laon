@@ -70,7 +70,7 @@ loadMessages();
 function appendMessage(msg, isYou) {
     const div = document.createElement('div');
     div.className = 'msg ' + (isYou ? 'you' : 'other');
-    div.textContent = (isYou ? msg.message + ' : ' + msg.sender_type : msg.sender_type + ' : ' + msg.message);
+    div.textContent = (isYou ? msg.message + ' : ' + 'you' : msg.sender_type + ' : ' + msg.message);
     chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
