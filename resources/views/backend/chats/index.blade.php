@@ -150,11 +150,11 @@
                 });
 
                 function openChatModal(id, type, name) {
+                    let capName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
                     partnerId = id;
                     partnerType = type;
-
                     document.getElementById("chatModal").style.display = "block";
-                    document.querySelector("#chatModal h3").innerText = "Chat With " + name;
+                    document.querySelector("#chatModal h3").innerText = "Chat With " + capName;
 
                     // Har baar naye user select karne par chat messages reload karo
                     loadMessages();
